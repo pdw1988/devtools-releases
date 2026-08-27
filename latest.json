@@ -1,11 +1,11 @@
 {
-  "version": "0.3.0",
-  "notes": "新增select转update，批量生成功能",
-  "pub_date": "2026-08-27T01:54:45.722Z",
+  "version": "0.4.0",
+  "notes": "新增免安装包",
+  "pub_date": "2026-08-27T01:57:06.801Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha1hRd2lTNFV0SHg2aExOVW1YOTFLczdhZm16N0pyQ2JEanhQUVcraFFKTjF5Q1ovTWlNMy9rZHVycEpkVVQ5SHE1Q0YxWmE4RjdCaFg2Zjg4SlZWdXdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3Nzk0NjMxCWZpbGU6RGV2VG9vbHNfMC4zLjBfeDY0LXNldHVwLmV4ZQpjQW0rUE1NUWVnOHlJUnV0Wmp6NmFlTlFaSmJyRjh1VERkWVZmd3V1TkJjK1ZUMjVqcGR4eE9GQzVjOFBKeWZGcjhicXJOZWFCYnRRbnFiT0NZaFpEUT09Cg==",
-      "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/DevTools_0.3.0_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha1FPNHhMUHVLL0x6VUl0dm1PMDZRT2RwaGVtR3ZneXBNc3JmWmZqVkI2TGc0aDFlWFVyMHp3Uks4K1FCRWZzMGlaUFl4MkxoMU1md0hXYTlKaGt2YlFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3Nzk1ODI2CWZpbGU6RGV2VG9vbHNfMC40LjBfeDY0LXNldHVwLmV4ZQp1Q0tlbXpUczdZWjNxT0Y5dkZ0eFF3a1NpNDkxcHZLOCtlWTZYRGszSW5WNWNQRU1NSmdTaWhwZVVQN1B5OFd4V1I1UGVuQ0NFaFF4OVBhNlhUbEVBdz09Cg==",
+      "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/DevTools_0.4.0_x64-setup.exe"
     }
   }
 }
