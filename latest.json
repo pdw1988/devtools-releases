@@ -1,11 +1,11 @@
 {
-  "version": "0.2.0",
-  "notes": "新增配置管理页：YAML/Properties 一键互转保留注释、实时校验报行号、智能提示；内置自动更新",
-  "pub_date": "2026-08-26T04:51:27.209Z",
+  "version": "0.3.0",
+  "notes": "新增select转换update",
+  "pub_date": "2026-08-27T01:37:11.943Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha2ZzalZVTWt5ZDNjbkV6MDRIL0NZaTVuSmxIeUVZYXIxdWoyWFRrNG5IY0FtTHNyNDk0T3lpMm84SUZxTEQvWkZGMGdLK3A2NVJ2ekVQRTYyT1dtRVFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NzE0NTMyCWZpbGU6RGV2VG9vbHNfMC4yLjBfeDY0LXNldHVwLmV4ZQphTGRQQzZTSUM5Z0VsYmMySXdxbC9YV2RqNVJRb21aRW81WW90aXU4Q1RTMDcvWkxiOGcybzFFakxtQ1VBQ1ZnRE0zUm5Sc2VMZ2FNRUMvWC9tdU1EQT09Cg==",
-      "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/DevTools_0.2.0_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha1hRd2lTNFV0SHg2aExOVW1YOTFLczdhZm16N0pyQ2JEanhQUVcraFFKTjF5Q1ovTWlNMy9rZHVycEpkVVQ5SHE1Q0YxWmE4RjdCaFg2Zjg4SlZWdXdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3Nzk0NjMxCWZpbGU6RGV2VG9vbHNfMC4zLjBfeDY0LXNldHVwLmV4ZQpjQW0rUE1NUWVnOHlJUnV0Wmp6NmFlTlFaSmJyRjh1VERkWVZmd3V1TkJjK1ZUMjVqcGR4eE9GQzVjOFBKeWZGcjhicXJOZWFCYnRRbnFiT0NZaFpEUT09Cg==",
+      "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/DevTools_0.3.0_x64-setup.exe"
     }
   }
 }
