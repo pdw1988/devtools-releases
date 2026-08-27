@@ -1,7 +1,7 @@
 {
   "version": "0.3.0",
-  "notes": "新增select转换update",
-  "pub_date": "2026-08-27T01:37:11.943Z",
+  "notes": "新增select转update，批量生成功能",
+  "pub_date": "2026-08-27T01:54:45.722Z",
   "platforms": {
     "windows-x86_64": {
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha1hRd2lTNFV0SHg2aExOVW1YOTFLczdhZm16N0pyQ2JEanhQUVcraFFKTjF5Q1ovTWlNMy9rZHVycEpkVVQ5SHE1Q0YxWmE4RjdCaFg2Zjg4SlZWdXdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3Nzk0NjMxCWZpbGU6RGV2VG9vbHNfMC4zLjBfeDY0LXNldHVwLmV4ZQpjQW0rUE1NUWVnOHlJUnV0Wmp6NmFlTlFaSmJyRjh1VERkWVZmd3V1TkJjK1ZUMjVqcGR4eE9GQzVjOFBKeWZGcjhicXJOZWFCYnRRbnFiT0NZaFpEUT09Cg==",
