@@ -1,11 +1,11 @@
 {
-  "version": "0.4.0",
-  "notes": "新增免安装包",
-  "pub_date": "2026-08-27T01:57:06.801Z",
+  "version": "0.6.0",
+  "notes": "fix: @tauri-apps/api 补成直接依赖——修云端构建 TS2307\n\n- UpdateButton.tsx 动态 import('@tauri-apps/api/app')，但 package.json 里只有\n  三个 @tauri-apps/plugin-*，api 一直是传递依赖。pnpm 严格布局不会把它链到\n  项目根 node_modules，云端干净 checkout 的 tsc -b 当场报 TS2307 找不到模块\n- 本地四道闸门为什么一直全绿：C:\\Users\\pdw\\node_modules（用户主目录）里有\n  一份野生的 @tauri-apps/api，TS 沿父目录找 node_modules 时捡到了，把缺依赖\n  掩住了。这份野的换台机器就没有——不能当依赖用，只能当陷阱\n- pnpm add @tauri-apps/api@^2.11.1：与传递依赖同版本（2.11.1），./app 走\n  exports 的 ./* 通配解析到 app.d.ts；require.resolve 已落在项目自己的\n  .pnpm store 里，不再经过主目录",
+  "pub_date": "2026-08-28T03:17:35.792Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha1FPNHhMUHVLL0x6VUl0dm1PMDZRT2RwaGVtR3ZneXBNc3JmWmZqVkI2TGc0aDFlWFVyMHp3Uks4K1FCRWZzMGlaUFl4MkxoMU1md0hXYTlKaGt2YlFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3Nzk1ODI2CWZpbGU6RGV2VG9vbHNfMC40LjBfeDY0LXNldHVwLmV4ZQp1Q0tlbXpUczdZWjNxT0Y5dkZ0eFF3a1NpNDkxcHZLOCtlWTZYRGszSW5WNWNQRU1NSmdTaWhwZVVQN1B5OFd4V1I1UGVuQ0NFaFF4OVBhNlhUbEVBdz09Cg==",
-      "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/DevTools_0.4.0_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha2JSZGhCTTBlVFpDRlZFNjJMWUJaVEZJWTU0U2J2aHNKSmVDK253U1V5ZklnK2orZ0VaRUp1Mm9taEp5eThjQUpjVWpmcFRaQXBrNExWdXdRMWowQ2drPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3ODg3MDUzCWZpbGU6RGV2VG9vbHNfMC42LjBfeDY0LXNldHVwLmV4ZQo4a3h4b3EycEZ6VktuZXlBM0taK3BMSkFvS3B1VUFvRHdUb1BLUWpIeG1Va0dpYlR2UTI5Qkk1REd0NGdyMlJramhuMUIweUVSYml6SVFKVVNIZUhDQT09Cg==",
+      "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/DevTools_0.6.0_x64-setup.exe"
     }
   }
 }
