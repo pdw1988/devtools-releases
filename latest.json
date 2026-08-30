@@ -1,15 +1,15 @@
 {
-  "version": "0.8.0",
-  "notes": "发版 v0.8.0",
-  "pub_date": "2026-08-30T01:40:06.180Z",
+  "version": "0.9.0",
+  "notes": "发版 v0.9.0",
+  "pub_date": "2026-08-30T16:00:20.149Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha1JHc0hkenAvQzA4Z1lUSUZlT1JsYnF6YlhuaHkzWVA1K3NSZEptSzB2OVBaQko0MHpxeFBxaU1SbExLSnpHRWIzVnJ6T0hTZXVDbENmbVRrdjhXVVFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4MDUzOTQ5CWZpbGU6Q0hVSlUgU1FMXzAuOC4wX3g2NC1zZXR1cC5leGUKL2tVeFV3RVpoM29Db0VJNHJVZ2VZYTFkVHp6eXZWK2VXRzZCNWo5aGRpR1lDOGxQTUNRTmZleDRnMlNFY3dZdkVKTkxGL0ttdkJMUE8wK05rRVZTQ3c9PQo=",
-      "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CHUJU SQL_0.8.0_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha2Nza0U2RkZvLzNzMjIvWnhPSExBUTQzbEpPS3pUUjNvUnY0dU9xVkZ4TDhzbmYxQWlpRmxOUEtPUmNDZUh6S2kxQ3UyYkNSdEkyWjI4TjRHQkQ0cUFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4MTA1NTYzCWZpbGU6Q0hVSlUgU1FMXzAuOS4wX3g2NC1zZXR1cC5leGUKeE9uVDM1cGVONzZiRWU3d05QSGJydGUybmg0SXpBTU11OUFiOFZuZ3BHckRuWjZQemlvUjhHMi9xUy9XUjRNV2huOXJQd0lVZk1mMjB2Z1ZLMVkzRFE9PQo=",
+      "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CHUJU SQL_0.9.0_x64-setup.exe"
     },
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha1l4eUJHZkJIdFRsTTlSM3ltb20xRTJwT1dSb1pCMHdZaWZ0WjF5WXNod2Q2a0tTbEt2RklNR0JBaUhQZUdGNVZ1TkxvZ0duRUlLR1EyUzJRMWM2Z1FnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4MDUzMDI0CWZpbGU6Q0hVSlUgU1FMLmFwcC50YXIuZ3oKeUw2eWRxMmM2Nk5WSnA4cmQvbHhDcXVuSGwzRHAxRWlkbXFFQnNkRUJmWWRVOTBWK3dnT2MrWXozYWlKMSs0UjdKZG04TXVLRFQ5N2hPR2FtTHpYQ1E9PQo=",
-      "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CHUJU-SQL_0.8.0.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha1gvczBWZnMxZWJRTVVKbnJoNTdGd25SdVBoT3JJNS9rZUQ3Z0o0RXZpZElOVWJMWEt3cXNXbkhCTlhXbi9aYjY4OFVWaVFkd2pJVXpmYnJGVWJWZmdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4MTA0NzAwCWZpbGU6Q0hVSlUgU1FMLmFwcC50YXIuZ3oKQkFMcUhER3h3cnoyV09FR2JlTEl2cGMwY0JmZUxWOHliSGFxam9HalFURWV6Nlh4R0FnSjZNNzZqVHp5L3dqR1F3YVRRZWpPMTFaNmZab0R0Z3lqQWc9PQo=",
+      "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CHUJU-SQL_0.9.0.app.tar.gz"
     }
   }
 }
