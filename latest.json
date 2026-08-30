@@ -1,11 +1,15 @@
 {
-  "version": "0.6.0",
-  "notes": "fix: @tauri-apps/api 补成直接依赖——修云端构建 TS2307\n\n- UpdateButton.tsx 动态 import('@tauri-apps/api/app')，但 package.json 里只有\n  三个 @tauri-apps/plugin-*，api 一直是传递依赖。pnpm 严格布局不会把它链到\n  项目根 node_modules，云端干净 checkout 的 tsc -b 当场报 TS2307 找不到模块\n- 本地四道闸门为什么一直全绿：C:\\Users\\pdw\\node_modules（用户主目录）里有\n  一份野生的 @tauri-apps/api，TS 沿父目录找 node_modules 时捡到了，把缺依赖\n  掩住了。这份野的换台机器就没有——不能当依赖用，只能当陷阱\n- pnpm add @tauri-apps/api@^2.11.1：与传递依赖同版本（2.11.1），./app 走\n  exports 的 ./* 通配解析到 app.d.ts；require.resolve 已落在项目自己的\n  .pnpm store 里，不再经过主目录",
-  "pub_date": "2026-08-28T03:17:35.792Z",
+  "version": "0.8.0",
+  "notes": "发版 v0.8.0",
+  "pub_date": "2026-08-30T01:40:06.180Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha2JSZGhCTTBlVFpDRlZFNjJMWUJaVEZJWTU0U2J2aHNKSmVDK253U1V5ZklnK2orZ0VaRUp1Mm9taEp5eThjQUpjVWpmcFRaQXBrNExWdXdRMWowQ2drPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3ODg3MDUzCWZpbGU6RGV2VG9vbHNfMC42LjBfeDY0LXNldHVwLmV4ZQo4a3h4b3EycEZ6VktuZXlBM0taK3BMSkFvS3B1VUFvRHdUb1BLUWpIeG1Va0dpYlR2UTI5Qkk1REd0NGdyMlJramhuMUIweUVSYml6SVFKVVNIZUhDQT09Cg==",
-      "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/DevTools_0.6.0_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha1JHc0hkenAvQzA4Z1lUSUZlT1JsYnF6YlhuaHkzWVA1K3NSZEptSzB2OVBaQko0MHpxeFBxaU1SbExLSnpHRWIzVnJ6T0hTZXVDbENmbVRrdjhXVVFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4MDUzOTQ5CWZpbGU6Q0hVSlUgU1FMXzAuOC4wX3g2NC1zZXR1cC5leGUKL2tVeFV3RVpoM29Db0VJNHJVZ2VZYTFkVHp6eXZWK2VXRzZCNWo5aGRpR1lDOGxQTUNRTmZleDRnMlNFY3dZdkVKTkxGL0ttdkJMUE8wK05rRVZTQ3c9PQo=",
+      "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CHUJU SQL_0.8.0_x64-setup.exe"
+    },
+    "darwin-aarch64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha1l4eUJHZkJIdFRsTTlSM3ltb20xRTJwT1dSb1pCMHdZaWZ0WjF5WXNod2Q2a0tTbEt2RklNR0JBaUhQZUdGNVZ1TkxvZ0duRUlLR1EyUzJRMWM2Z1FnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4MDUzMDI0CWZpbGU6Q0hVSlUgU1FMLmFwcC50YXIuZ3oKeUw2eWRxMmM2Nk5WSnA4cmQvbHhDcXVuSGwzRHAxRWlkbXFFQnNkRUJmWWRVOTBWK3dnT2MrWXozYWlKMSs0UjdKZG04TXVLRFQ5N2hPR2FtTHpYQ1E9PQo=",
+      "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CHUJU-SQL_0.8.0.app.tar.gz"
     }
   }
 }
