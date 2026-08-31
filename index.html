@@ -121,10 +121,12 @@
         <p class="lead">本地算，表结构不上网。粘日志把问号填上，或把查询结果变成按主键的 UPDATE。不是第二个 Navicat。</p>
         <div class="acts">
           <a class="btn btn-pri" id="dl-win" href="https://github.com/pdw1988/devtools-releases" rel="noopener">下载 Windows 安装包</a>
+          <a class="btn btn-ghost" id="dl-oci" href="https://github.com/pdw1988/devtools-releases" rel="noopener">含 Oracle 11g 客户端</a>
           <a class="btn btn-ghost" id="dl-mac" href="https://github.com/pdw1988/devtools-releases" rel="noopener">macOS</a>
           <a class="btn btn-ghost" id="dl-more" href="https://github.com/pdw1988/devtools-releases" rel="noopener">便携版</a>
         </div>
         <p class="meta" id="ver">正在读取最新版本…</p>
+        <p class="meta">本机已有 Instant Client / PL/SQL，或只连 Oracle 12c+ / MySQL / PG：下普通包。要连 11g 又不想自己装客户端：下「含 Oracle 11g 客户端」（大约多 200MB）。</p>
         <p class="meta">Windows 若被 SmartScreen 拦，选「仍要安装」。macOS 未公证，右键 → 打开。</p>
       </div>
       <pre class="code" aria-label="日志转 SQL 示例"><span class="who">日志转 SQL · 这段免费</span><span class="c">-- 粘 Preparing + Parameters 之后</span>
@@ -199,6 +201,10 @@
       <p>不会。计算在本机。连接密码不落盘。许可码只在本机校验。</p>
     </details>
     <details>
+      <summary>两个 Windows 安装包怎么选？</summary>
+      <p>普通包体积小，自动更新走它。本机 PATH 里已有 oci.dll（PL/SQL、Instant Client、完整客户端），或只连 Oracle 12.1+ / MySQL / PostgreSQL，下这个。要连 Oracle 11g、本机又没有客户端，下「含 Oracle 11g 客户端」——装的是 Instant Client 19c，不用自己下 oci.dll。只塞一个 oci.dll 连不上，所以这个包会大一截。</p>
+    </details>
+    <details>
       <summary>Windows 提示「已阻止」怎么办？</summary>
       <p>没有购买代码签名证书。SmartScreen 选「仍要安装」。不要从不明网盘下，只走本页或产物仓。</p>
     </details>
@@ -229,6 +235,7 @@
   }
 
   const winBtn = document.getElementById('dl-win')
+  const ociBtn = document.getElementById('dl-oci')
   const moreBtn = document.getElementById('dl-more')
   const verEl = document.getElementById('ver')
   const wxLine = document.getElementById('wechat-line')
@@ -274,6 +281,7 @@
     verEl.textContent = '当前公开包 v' + j.version + (j.notes ? ' · ' + String(j.notes).split('\n')[0] : '')
     if (win) {
       winBtn.href = encodeURI(win)
+      ociBtn.href = sibling(win, 'CHUJU SQL_' + j.version + '_x64-setup-oracle11g.exe')
       moreBtn.href = sibling(win, 'CHUJU-SQL_' + j.version + '_portable.exe')
       document.getElementById('dl-mac').href = sibling(win, 'CHUJU SQL_' + j.version + '_aarch64.dmg')
     }
