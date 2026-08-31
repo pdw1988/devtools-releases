@@ -182,8 +182,7 @@
   <section class="card pay" id="pay">
     <div>
       <h3>个人专业版 199 元 · 终身（当前设备）</h3>
-      <p class="story" style="margin-top:0">付款后把订单号发给作者，回一个许可码，在升级卡里粘贴即生效。许可只在本机校验，不上传表结构。</p>
-      <p class="story" id="wechat-line">对外微信号还没写死。打开本文件顶部的 <code>SITE.wechat</code> 填上，升级卡 <code>payHint</code> 保持同一句。</p>
+      <p class="story" style="margin-top:0" id="wechat-line">微信 pdwcloud88，转账后把订单号发给这个号，回一行许可码，粘在升级卡即生效。许可只在本机校验，不上传表结构。</p>
       <div class="todo" id="todo-wx" hidden>本机预览：微信号是空的。发到 GitHub Pages 之前填 <code>SITE.wechat</code>，收款码放同目录 <code>pay-qr.png</code>。</div>
     </div>
     <div>
@@ -208,7 +207,7 @@
     </details>
     <details>
       <summary>许可码丢了怎么办？</summary>
-      <p>发给作者当时的订单号，按台账补发。换电脑算另一台设备，需要再买或再签。</p>
+      <p>把当时的订单号发给微信 pdwcloud88，按台账补发。换电脑算另一台设备，需要再买或再签。</p>
     </details>
   </section>
 
@@ -241,7 +240,7 @@
   const qrMiss = document.getElementById('pay-qr-miss')
 
   if (SITE.wechat) {
-    wxLine.innerHTML = '微信 <strong>' + escapeHtml(SITE.wechat) + '</strong>。转账 199，备注订单号，回一行 <code>CHUJU2.…</code>。'
+    wxLine.innerHTML = '微信 <strong>' + escapeHtml(SITE.wechat) + '</strong>，转账后把订单号发给这个号，回一行许可码，粘在升级卡即生效。许可只在本机校验，不上传表结构。'
   }
   const local = location.protocol === 'file:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1'
   if (!SITE.wechat && local) todo.hidden = false
