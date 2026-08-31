@@ -2,6 +2,8 @@
 
 对着表结构，出一句能跑的 SQL。Windows / macOS 本地离线桌面工具：粘贴建表语句、连 Oracle / MySQL / PostgreSQL，生成可执行 SQL，也可以在当前连接上查询、插入一行、按主键更新或删除。
 
+**介绍页**：[https://pdw1988.github.io/devtools-releases/](https://pdw1988.github.io/devtools-releases/)
+
 这个仓库**只放安装包和更新清单**，没有源码。
 
 ## 下载（当前 1.0.0）

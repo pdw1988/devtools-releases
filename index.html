@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CHUJU SQL · 对着表，出一句能跑的 SQL</title>
+<meta name="description" content="对着表，出一句能跑的 SQL。本地算，表结构不上网。Windows 免费下载。">
+<style>
+  :root {
+    --bg: #e8eef6;
+    --panel: #ffffff;
+    --panel2: #f3f7fb;
+    --line: rgba(20, 70, 120, .12);
+    --line2: rgba(0, 150, 200, .38);
+    --txt: #152033;
+    --dim: #5b6d82;
+    --dimmer: #8a99ab;
+    --acc: #0096d6;
+    --acc2: #0077b0;
+    --acc-ink: #f7fcff;
+    --ok: #0d9f6e;
+    --warn: #d8890b;
+    --font: -apple-system, 'Segoe UI', 'Microsoft YaHei', system-ui, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, 'Cascadia Mono', Consolas, 'Noto Sans Mono CJK SC', monospace;
+    --r: 12px;
+    --glow: 0 1px 0 rgba(255, 255, 255, .9), 0 10px 32px -14px rgba(20, 70, 120, .22);
+  }
+  * { box-sizing: border-box }
+  html, body { margin: 0; background: var(--bg); color: var(--txt); font: 16px/1.55 var(--font) }
+  body {
+    min-height: 100vh;
+    background-image:
+      radial-gradient(880px 500px at 10% -12%, rgba(0, 168, 230, .22), transparent 62%),
+      radial-gradient(720px 440px at 96% 2%, rgba(99, 102, 241, .12), transparent 58%),
+      linear-gradient(rgba(0, 140, 200, .07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 140, 200, .07) 1px, transparent 1px);
+    background-size: auto, auto, 32px 32px, 32px 32px;
+  }
+  a { color: var(--acc2); text-decoration: none }
+  a:hover { text-decoration: underline }
+  .wrap { width: min(920px, calc(100% - 36px)); margin: 0 auto }
+  header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 0 8px;
+  }
+  .brand { font-weight: 700; letter-spacing: .02em }
+  .brand span { color: var(--dim); font-weight: 500; margin-left: 8px; font-size: 13px }
+  .hero { padding: 28px 0 8px }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 22px; align-items: start }
+  @media (max-width: 780px) { .hero-grid { grid-template-columns: 1fr } }
+  h1 { font-size: clamp(28px, 4vw, 40px); line-height: 1.2; margin: 0 0 12px; letter-spacing: -.02em }
+  .lead { color: var(--dim); font-size: 17px; margin: 0 0 22px; max-width: 36em }
+  .acts { display: flex; flex-wrap: wrap; gap: 10px; align-items: center }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    border: 0; border-radius: 10px; padding: 12px 18px; font: 600 15px/1 var(--font);
+    cursor: pointer; text-decoration: none !important;
+  }
+  .btn[aria-disabled="true"] { opacity: .55; pointer-events: none }
+  .btn-pri { background: var(--acc); color: var(--acc-ink); box-shadow: var(--glow) }
+  .btn-pri:hover { background: var(--acc2) }
+  .btn-ghost { background: var(--panel); color: var(--txt); border: 1px solid var(--line) }
+  .meta { margin-top: 12px; color: var(--dimmer); font-size: 13px }
+  .card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: var(--r);
+    box-shadow: var(--glow);
+  }
+  .code {
+    padding: 14px 16px; font: 13px/1.55 var(--mono); color: #1d4ed8;
+    background: #0f172a; color: #e2e8f0; border-radius: var(--r);
+  }
+  .code .who { color: #7dd3fc; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; display: block; margin-bottom: 8px }
+  .code .c { color: #64748b }
+  .code .k { color: #7dd3fc }
+  .code .s { color: #86efac }
+  .code .n { color: #fdba74 }
+  .hooks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 28px 0 }
+  @media (max-width: 780px) { .hooks { grid-template-columns: 1fr } }
+  .hook { padding: 16px 16px 14px }
+  .hook .tag {
+    display: inline-block; font-size: 12px; color: var(--ok); background: rgba(13, 159, 110, .1);
+    border-radius: 999px; padding: 2px 8px; margin-bottom: 8px;
+  }
+  .hook .tag.pro { color: var(--warn); background: rgba(216, 137, 11, .12) }
+  .hook h2 { font-size: 16px; margin: 0 0 6px }
+  .hook p { margin: 0; color: var(--dim); font-size: 14px }
+  section { margin: 28px 0 }
+  h3 { font-size: 20px; margin: 0 0 12px }
+  .story { color: var(--dim); }
+  .story ol { padding-left: 1.2em; margin: 10px 0 }
+  .story li { margin: 6px 0 }
+  table { width: 100%; border-collapse: collapse; font-size: 14px }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top }
+  th { color: var(--dimmer); font-weight: 600; font-size: 12px; letter-spacing: .04em }
+  td:nth-child(2), td:nth-child(3) { width: 34% }
+  .pay { display: grid; grid-template-columns: 1fr auto; gap: 18px; padding: 18px; align-items: start }
+  @media (max-width: 780px) { .pay { grid-template-columns: 1fr } }
+  .pay-qr { width: 148px; height: 148px; border-radius: 8px; border: 1px dashed var(--line2); background: var(--panel2); object-fit: contain }
+  .pay-qr-miss { width: 148px; height: 148px; border-radius: 8px; border: 1px dashed var(--line2); background: var(--panel2); color: var(--dimmer); font-size: 12px; display: grid; place-items: center; text-align: center; padding: 12px }
+  .faq details { border-top: 1px solid var(--line); padding: 10px 0 }
+  .faq summary { cursor: pointer; font-weight: 600 }
+  .faq p { margin: 8px 0 0; color: var(--dim); font-size: 14px }
+  footer { padding: 28px 0 40px; color: var(--dimmer); font-size: 13px }
+  .todo {
+    margin: 12px 0 0; padding: 10px 12px; border-radius: 8px;
+    background: rgba(216, 137, 11, .12); color: #8a5a00; font-size: 13px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">CHUJU SQL<span>本地 · 离线</span></div>
+    <a class="btn btn-ghost" href="#download">下载</a>
+  </header>
+
+  <div class="hero" id="download">
+    <div class="hero-grid">
+      <div>
+        <h1>对着表，出一句能跑的 SQL</h1>
+        <p class="lead">本地算，表结构不上网。粘日志把问号填上，或把查询结果变成按主键的 UPDATE。不是第二个 Navicat。</p>
+        <div class="acts">
+          <a class="btn btn-pri" id="dl-win" href="https://github.com/pdw1988/devtools-releases" rel="noopener">下载 Windows 安装包</a>
+          <a class="btn btn-ghost" id="dl-mac" href="https://github.com/pdw1988/devtools-releases" rel="noopener">macOS</a>
+          <a class="btn btn-ghost" id="dl-more" href="https://github.com/pdw1988/devtools-releases" rel="noopener">便携版</a>
+        </div>
+        <p class="meta" id="ver">正在读取最新版本…</p>
+        <p class="meta">Windows 若被 SmartScreen 拦，选「仍要安装」。macOS 未公证，右键 → 打开。</p>
+      </div>
+      <pre class="code" aria-label="日志转 SQL 示例"><span class="who">日志转 SQL · 这段免费</span><span class="c">-- 粘 Preparing + Parameters 之后</span>
+<span class="k">INSERT INTO</span> sys_user (username, status)
+<span class="k">VALUES</span> (<span class="s">'zhangsan'</span>, <span class="n">1</span>);</pre>
+    </div>
+  </div>
+
+  <div class="hooks">
+    <article class="card hook">
+      <span class="tag">免费 · 能复制</span>
+      <h2>日志转 SQL</h2>
+      <p>粘 Preparing + Parameters，问号填上就能跑。获客口，不锁。</p>
+    </article>
+    <article class="card hook">
+      <span class="tag pro">免费能看 · 复制要专业版</span>
+      <h2>SELECT 转 UPDATE</h2>
+      <p>查结果一贴，出按主键的 UPDATE。改状态、CCB 最痛的那一下。</p>
+    </article>
+    <article class="card hook">
+      <span class="tag">单表能复制</span>
+      <h2>离线 + 连库</h2>
+      <p>DDL 粘进来就能用。连上库把字典拉进来。密码不落盘。</p>
+    </article>
+  </div>
+
+  <section class="story">
+    <h3>多数时候你要的不是再开一个客户端</h3>
+    <p>改一行状态、补一条 INSERT、把日志里的问号填上——要的是一句能跑的 SQL。</p>
+    <ol>
+      <li>把建表语句贴进来（PL/SQL / Navicat 导出的 Oracle DDL 也能认），或连上库把字典拉进来。</li>
+      <li>按中文注释或表名搜到那张表。</li>
+      <li>配置一改，右边就是结果：可执行或 <code>#{}</code>，复制就走。</li>
+    </ol>
+    <p>两件别人没有：控制台日志连参数一起贴，问号填回去；查询结果一贴，按主键出 UPDATE。SQL 框不随便跑写语句。表结构、SQL、连接密码都不上传。</p>
+  </section>
+
+  <section class="card" style="padding: 6px 4px 0; overflow: auto">
+    <table>
+      <thead>
+        <tr><th></th><th>免费</th><th>专业 · 199 元终身</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>自导表</td><td>最多 8 张（示例表不占）</td><td>不限</td></tr>
+        <tr><td>日志转SQL</td><td>能用、能复制</td><td>同左</td></tr>
+        <tr><td>单表 SQL</td><td>能复制</td><td>同左</td></tr>
+        <tr><td>SELECT转UPDATE / 多表 / 批量 / 导出 DDL</td><td>能看，不能一键复制/下载</td><td>能复制</td></tr>
+        <tr><td>连库导入进缓存</td><td>能连、能看清单</td><td>能导入</td></tr>
+        <tr><td>存模板</td><td>能套用已有</td><td>能保存</td></tr>
+        <tr><td>我的SQL库</td><td>最多 5 条</td><td>不限</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card pay" id="pay">
+    <div>
+      <h3>个人专业版 199 元 · 终身（当前设备）</h3>
+      <p class="story" style="margin-top:0">付款后把订单号发给作者，回一个许可码，在升级卡里粘贴即生效。许可只在本机校验，不上传表结构。</p>
+      <p class="story" id="wechat-line">对外微信号还没写死。打开本文件顶部的 <code>SITE.wechat</code> 填上，升级卡 <code>payHint</code> 保持同一句。</p>
+      <div class="todo" id="todo-wx" hidden>本机预览：微信号是空的。发到 GitHub Pages 之前填 <code>SITE.wechat</code>，收款码放同目录 <code>pay-qr.png</code>。</div>
+    </div>
+    <div>
+      <img class="pay-qr" id="pay-qr" alt="微信收款码" hidden>
+      <div class="pay-qr-miss" id="pay-qr-miss">收款码<br>pay-qr.png</div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h3>常见问题</h3>
+    <details open>
+      <summary>和 Navicat / DataGrip 有什么不同？</summary>
+      <p>它们是客户端。这个是「没开库也能出一句 SQL」。日志填参、SELECT 转 UPDATE，它们没有。连库是为了少切一次窗口，不是做成第三个 Navicat。</p>
+    </details>
+    <details>
+      <summary>表结构、SQL 会上传吗？</summary>
+      <p>不会。计算在本机。连接密码不落盘。许可码只在本机校验。</p>
+    </details>
+    <details>
+      <summary>Windows 提示「已阻止」怎么办？</summary>
+      <p>没有购买代码签名证书。SmartScreen 选「仍要安装」。不要从不明网盘下，只走本页或产物仓。</p>
+    </details>
+    <details>
+      <summary>许可码丢了怎么办？</summary>
+      <p>发给作者当时的订单号，按台账补发。换电脑算另一台设备，需要再买或再签。</p>
+    </details>
+  </section>
+
+  <footer>
+    CHUJU SQL · 对着表，出一句能跑的 SQL。安装包在公开产物仓，源码不公开。
+  </footer>
+</div>
+
+<script>
+  /**
+   * 开宣前改这里。三处保持同一句：本页 / 升级卡 COPY.payHint / 群消息。
+   * 收款码图放到同目录 pay-qr.png（拷到产物仓时一起带上）。
+   */
+  const SITE = {
+    wechat: 'pdwcloud88',
+    repo: 'https://github.com/pdw1988/devtools-releases',
+    latest: [
+      './latest.json',
+      'https://raw.githubusercontent.com/pdw1988/devtools-releases/main/latest.json',
+      'https://cdn.jsdelivr.net/gh/pdw1988/devtools-releases@main/latest.json',
+    ],
+  }
+
+  const winBtn = document.getElementById('dl-win')
+  const moreBtn = document.getElementById('dl-more')
+  const verEl = document.getElementById('ver')
+  const wxLine = document.getElementById('wechat-line')
+  const todo = document.getElementById('todo-wx')
+  const qr = document.getElementById('pay-qr')
+  const qrMiss = document.getElementById('pay-qr-miss')
+
+  if (SITE.wechat) {
+    wxLine.innerHTML = '微信 <strong>' + escapeHtml(SITE.wechat) + '</strong>。转账 199，备注订单号，回一行 <code>CHUJU2.…</code>。'
+  }
+  const local = location.protocol === 'file:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1'
+  if (!SITE.wechat && local) todo.hidden = false
+
+  qr.src = 'pay-qr.png'
+  qr.onload = () => { qr.hidden = false; qrMiss.hidden = true }
+  qr.onerror = () => { qr.removeAttribute('src') }
+
+  function escapeHtml(s) {
+    return s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
+  }
+
+  function sibling(setupUrl, name) {
+    const base = setupUrl.replace(/[^/]+$/, '')
+    return encodeURI(base + name)
+  }
+
+  async function loadLatest() {
+    for (const url of SITE.latest) {
+      try {
+        const r = await fetch(url, { cache: 'no-store' })
+        if (r.ok) return await r.json()
+      } catch { /* 下一源 */ }
+    }
+    return null
+  }
+
+  loadLatest().then((j) => {
+    if (!j || !j.version) {
+      verEl.textContent = '读不到版本清单时，点按钮去产物仓下最新的 Windows 安装包（文件名带 x64-setup.exe）。'
+      return
+    }
+    const win = j.platforms && j.platforms['windows-x86_64'] && j.platforms['windows-x86_64'].url
+    verEl.textContent = '当前公开包 v' + j.version + (j.notes ? ' · ' + String(j.notes).split('\n')[0] : '')
+    if (win) {
+      winBtn.href = encodeURI(win)
+      moreBtn.href = sibling(win, 'CHUJU-SQL_' + j.version + '_portable.exe')
+      document.getElementById('dl-mac').href = sibling(win, 'CHUJU SQL_' + j.version + '_aarch64.dmg')
+    }
+  })
+</script>
+</body>
+</html>
