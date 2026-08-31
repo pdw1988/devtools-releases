@@ -1,19 +1,24 @@
 # 更新日志
 
+## v1.1.0 —— 2026-08-31
+
+发版 v1.1.0
+
+> Windows 安装包（推荐）：`CHUJU SQL_1.1.0_x64-setup.exe` · 含 Oracle 11g 客户端：`CHUJU SQL_1.1.0_x64-setup-oracle11g.exe`（本次未打） · 便携版：`CHUJU-SQL_1.1.0_portable.exe`（免安装；不含自动更新）
+> macOS：`CHUJU SQL_1.1.0_aarch64.dmg`（拖进应用程序；未签名时需右键 → 打开）
+
 ## v1.0.0 —— 2026-08-31
 
 发版 v1.0.0
 
 > Windows 安装包：`CHUJU SQL_1.0.0_x64-setup.exe` · 便携版：`CHUJU-SQL_1.0.0_portable.exe`（免安装，直接运行；不含自动更新，需手动覆盖升级）
 > macOS：`CHUJU SQL_1.0.0_aarch64.dmg`（拖进应用程序；未签名时需右键 → 打开）
-
 ## v0.9.0 —— 2026-08-30
 
 发版 v0.9.0
 
 > Windows 安装包：`CHUJU SQL_0.9.0_x64-setup.exe` · 便携版：`CHUJU-SQL_0.9.0_portable.exe`（免安装，直接运行；不含自动更新，需手动覆盖升级）
-> macOS：`CHUJU SQL_0.9.0_aarch64.dmg`（拖进应用程序；未签名时需右键 → 打开）
-## v0.8.0 —— 2026-08-30
+> macOS：`CHUJU SQL_0.9.0_aarch64.dmg`（拖进应用程序；未签名时需右键 → 打开）## v0.8.0 —— 2026-08-30
 
 发版 v0.8.0
 
