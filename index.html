@@ -121,7 +121,7 @@
         <p class="lead">本地算，表结构不上网。粘日志把问号填上，或把查询结果变成按主键的 UPDATE。不是第二个 Navicat。</p>
         <div class="acts">
           <a class="btn btn-pri" id="dl-win" href="https://github.com/pdw1988/devtools-releases" rel="noopener">下载 Windows 安装包</a>
-          <a class="btn btn-ghost" id="dl-oci" href="https://github.com/pdw1988/devtools-releases/releases/download/v1.1.0/CHUJU-SQL_1.1.0_x64-setup-oracle11g.exe" rel="noopener">含 Oracle 11g 客户端</a>
+          <a class="btn btn-ghost" id="dl-oci" href="https://github.com/pdw1988/devtools-releases/releases/download/v1.2.0/CHUJU-SQL_1.2.0_x64-setup-oracle11g.exe" rel="noopener">含 Oracle 11g 客户端</a>
           <a class="btn btn-ghost" id="dl-mac" href="https://github.com/pdw1988/devtools-releases" rel="noopener">macOS</a>
           <a class="btn btn-ghost" id="dl-more" href="https://github.com/pdw1988/devtools-releases" rel="noopener">便携版</a>
         </div>
@@ -149,7 +149,7 @@
     <article class="card hook">
       <span class="tag">免费 8 张表</span>
       <h2>离线 + 连库</h2>
-      <p>DDL 粘进来就能用。连上库把字典拉进来，计入 8 张帽。密码不落盘。</p>
+      <p>DDL 粘进来就能用。连上库把字典拉进来，计入 8 张帽。生产不记密码。</p>
     </article>
   </div>
 
@@ -198,7 +198,7 @@
     </details>
     <details>
       <summary>表结构、SQL 会上传吗？</summary>
-      <p>不会。计算在本机。连接密码不落盘。许可码只在本机校验。</p>
+      <p>不会。计算在本机。连接列表里没有密码。测试/本地可记在系统凭据里；生产每次现输。许可码只在本机校验。</p>
     </details>
     <details>
       <summary>两个 Windows 安装包怎么选？</summary>
@@ -262,8 +262,16 @@
     return encodeURI(base + name)
   }
 
+  function firstNote(notes) {
+    if (!notes) return ''
+    const line = String(notes).split('\n').map((s) => s.trim()).find((s) => s.replace(/^·\s*/, '').length > 0)
+    return line ? line.replace(/^·\s*/, '') : ''
+  }
+
   async function loadLatest() {
-    for (const url of SITE.latest) {
+    const bust = '_=' + Date.now()
+    for (const base of SITE.latest) {
+      const url = base + (base.includes('?') ? '&' : '?') + bust
       try {
         const r = await fetch(url, { cache: 'no-store' })
         if (r.ok) return await r.json()
@@ -278,13 +286,16 @@
       return
     }
     const win = j.platforms && j.platforms['windows-x86_64'] && j.platforms['windows-x86_64'].url
-    verEl.textContent = '当前公开包 v' + j.version + (j.notes ? ' · ' + String(j.notes).split('\n')[0] : '')
+    const hint = firstNote(j.notes)
+    verEl.textContent = '当前公开包 v' + j.version + (hint ? ' · ' + hint : '')
     if (win) {
       winBtn.href = encodeURI(win)
       ociBtn.href = SITE.repo + '/releases/download/v' + j.version + '/' + encodeURIComponent('CHUJU-SQL_' + j.version + '_x64-setup-oracle11g.exe')
       moreBtn.href = sibling(win, 'CHUJU-SQL_' + j.version + '_portable.exe')
       document.getElementById('dl-mac').href = sibling(win, 'CHUJU SQL_' + j.version + '_aarch64.dmg')
     }
+  }).catch(() => {
+    verEl.textContent = '读不到版本清单时，点按钮去产物仓下最新的 Windows 安装包（文件名带 x64-setup.exe）。'
   })
 </script>
 </body>
