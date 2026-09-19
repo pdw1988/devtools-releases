@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CHUJU SQL · 对着表，出一句能跑的 SQL</title>
-<meta name="description" content="CHUJU SQL 是一款本地运行的 SQL 生成工具：日志参数自动回填、查询结果一键转为主键 UPDATE、表结构离线速查。数据不出本机，Windows / macOS 免费下载。">
+<title>码上 CodeNow · 对着表，出一句能跑的 SQL</title>
+<meta name="description" content="码上 CodeNow 是一款本地运行的 SQL 生成工具：日志参数自动回填、查询结果一键转为主键 UPDATE、表结构离线速查。数据不出本机，Windows / macOS 免费下载。">
 <style>
   :root {
     --bg: #e8eef6;
@@ -110,7 +110,7 @@
 <body>
 <div class="wrap">
   <header>
-    <div class="brand">CHUJU SQL<span>本地运行 · 离线可用</span></div>
+    <div class="brand">码上 CodeNow<span>本地运行 · 离线可用</span></div>
     <a class="btn btn-ghost" href="#download">下载</a>
   </header>
 
@@ -194,7 +194,7 @@
     <h3>常见问题</h3>
     <details open>
       <summary>和 Navicat / DataGrip 有什么不同？</summary>
-      <p>Navicat、DataGrip 是数据库客户端，解决的是「连上库之后」的操作。CHUJU SQL 补的是更前面的那一步：不连库也能基于表结构生成可执行的 SQL。日志参数回填、查询结果转 UPDATE 是它的差异化能力；连库功能只是为了少切换一次窗口。</p>
+      <p>Navicat、DataGrip 是数据库客户端，解决的是「连上库之后」的操作。码上 CodeNow 补的是更前面的那一步：不连库也能基于表结构生成可执行的 SQL。日志参数回填、查询结果转 UPDATE 是它的差异化能力；连库功能只是为了少切换一次窗口。</p>
     </details>
     <details>
       <summary>表结构、SQL 会上传吗？</summary>
@@ -215,7 +215,7 @@
   </section>
 
   <footer>
-    CHUJU SQL · 对着表，出一句能跑的 SQL。安装包发布于 GitHub 公开仓库，软件本体不开源；表结构、SQL 与连接信息均保存在本机。
+    码上 CodeNow · 对着表，出一句能跑的 SQL。安装包发布于 GitHub 公开仓库，软件本体不开源；表结构、SQL 与连接信息均保存在本机。
   </footer>
 </div>
 
@@ -290,9 +290,15 @@
     verEl.textContent = '最新公开版本 v' + j.version + (hint ? ' · ' + hint : '')
     if (win) {
       winBtn.href = encodeURI(win)
-      ociBtn.href = SITE.repo + '/releases/download/v' + j.version + '/' + encodeURIComponent('CHUJU-SQL_' + j.version + '_x64-setup-oracle11g.exe')
-      moreBtn.href = sibling(win, 'CHUJU-SQL_' + j.version + '_portable.exe')
-      document.getElementById('dl-mac').href = sibling(win, 'CHUJU SQL_' + j.version + '_aarch64.dmg')
+      /* 附属包名从 latest.json 的 setup.exe 文件名推导，不写死品牌前缀：
+         productName 改成 CodeNow 后新包叫 CodeNow_…，旧包仍是 CHUJU SQL_/CHUJU-SQL_。
+         oci/portable 历史上是连字符前缀，dmg 是空格前缀，照旧区分。 */
+      const file = decodeURIComponent(win.split('/').pop() || '')
+      const base = file.replace(/_x64-setup\.exe$/, '')
+      const hyphen = base.replace(' ', '-')
+      ociBtn.href = SITE.repo + '/releases/download/v' + j.version + '/' + encodeURIComponent(hyphen + '_x64-setup-oracle11g.exe')
+      moreBtn.href = sibling(win, hyphen + '_portable.exe')
+      document.getElementById('dl-mac').href = sibling(win, base + '_aarch64.dmg')
     }
   }).catch(() => {
     verEl.textContent = '暂时无法读取版本信息，请点击上方按钮前往 Releases 页面，下载最新的 Windows 安装包（文件名含 x64-setup.exe）。'
