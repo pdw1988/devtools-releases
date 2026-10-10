@@ -1,14 +1,14 @@
 {
   "version": "1.10.1",
-  "notes": "· 日志查看：可切「最新在上 / 最早在上」，默认最新在上（优化）\n\n· 菜单调整：码上追 + 码上连合并为「码上运维」，正则测试器 / 日志转SQL / SELECT转UPDATE 暂时隐藏（调整）\n\n· 连服务器拉日志：搜日志按路径搜、目录显示全（优化）\n\n· JSONPath 查询改成「JSON 查看」：树形展开折叠 + 搜索定位（优化）\n\n· SFTP 传输三项打磨：下载百分比进度、断网快速判死、残片不落地（优化）\n\n· 页面测试认 uni-app 工程与差旅 / mscm 写操作，判定收紧堵掉误判（功能）",
-  "pub_date": "2026-10-10T04:16:36.368Z",
+  "notes": "fix(码上测): 列表页读地址参数时不带参数试开一次取第一行 / 取单据，打不开或没数据记跳过；mscm 工程巡检详情不再报「没有列表页能带参数打开它」\n\n- 「项目巡检」等列表读了 ?code= / ?name=（只是筛选条件），被当成「要参数才能打开」。\n  源码里分不出可选还是必填，改成运行时试：不带参数打开，有数据就用，打不开或没数据记跳过\n- 详情用例（vueRunner sourceRow）和编辑→改回（vueWriteRun runFormEdit）两处同改\n- 三个工程逐页复查：只有 mscm 工程巡检详情的红字消失，其余草稿不变\n\n· 页面测试：读地址参数当筛选的列表页也能当详情 / 编辑的入口（优化）\n\n· 连不上 GitHub 也能检查更新、下载安装包（Gitee 镜像）\n\n· 日志查看：可切「最新在上 / 最早在上」，默认最新在上（优化）\n\n· 菜单调整：码上追 + 码上连合并为「码上运维」，正则测试器 / 日志转SQL / SELECT转UPDATE 暂时隐藏（调整）\n\n· 连服务器拉日志：搜日志按路径搜、目录显示全（优化）\n\n· JSONPath 查询改成「JSON 查看」：树形展开折叠 + 搜索定位（优化）\n\n· SFTP 传输三项打磨：下载百分比进度、断网快速判死、残片不落地（优化）\n\n· 页面测试认 uni-app 工程与差旅 / mscm 写操作，判定收紧堵掉误判（功能）",
+  "pub_date": "2026-10-10T16:26:34.246Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha1VtNUVTV1BEVWlrUnVhNElSZ2M5ZHczMGNpWUZnQndNT01QWU5HWjVCZVZoYWhHL1BuODJ5bXdvWER6UWtpdDhZUlovQlE3WUJ3akVyb3hMUlFGZ2djPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNjA1NzU0CWZpbGU6Q29kZU5vd18xLjEwLjFfeDY0LXNldHVwLmV4ZQoxN3RoUHhSTnJDbE1YS2RkcElyVUpiWVQ5TlVKZFBPVUhJSHlEQmZXVFArUU01eTJUbytvRWNtRldPa0ZrZ1JraW1ndlRSMTU0cWhucVc1bVM2RDJBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha1pCUU9aQkxQbWxmQ0dYTEFCUzlkRGdoNWx0OVZ0UDJJZGpzTDZiR2I5UzVLM1Z2TERnNHIrczdiZ2t0N2xVRVZBTEhwdEU5TzBZQXRwUWhOZG5CY2dNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNjQ5NTU5CWZpbGU6Q29kZU5vd18xLjEwLjFfeDY0LXNldHVwLmV4ZQpXbUFBSlBPTjJTeFkrZVRja0c5VDc5T0hESkdrcGVuc3J4Ukx5U3I5cGNoTG1BMU9oMkFJZUlpVFFVNGY3NCtPMmwxOCtmS1VXZEh3M0RYcThXUUtDZz09Cg==",
       "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.10.1_x64-setup.exe"
     },
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha2FuVjJlamtISkZoYWlrUFowVUhiaTNSOVdodisrN0Z1Yml2eWYzK3dhSVVIM2RSTUMvSXMyUlpVb2hUR29ZNmFjM1NqMGFaTGFCVU94eU5SWTZ5b1FvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNjA0NjMwCWZpbGU6Q29kZU5vdy5hcHAudGFyLmd6CkJCcERtK0FGWCtLYTIyVnhWdlM5Q25BWUo0SVB4WldZWG1zTW0rYTZCQmwrQ3ZkZjRpSDdrZ3B1eEpQYk05bFlBR2FFNEdNVmsvVFE1RHU4OXcxK0JRPT0K",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha2RRRVNNcGQxWWw0Njh1VnFwaFVoUkdQVUY2a1RudWF2bWsvV2ZkTGtxVHJIZmhqZnY1TGIydlQzaTVYMUgvL3NrTjNNcUJXb0lvT0Q1SHpXNWoxUmdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNjQ4NDM3CWZpbGU6Q29kZU5vdy5hcHAudGFyLmd6Ck9vVXIxU0NCUEFPV0xOL0tucFFqazhEODczMzZ2N3lHSHNnd2dqNk9oZjVRUFBQUmJBNWFGZ3pvdzE2NjRhTzN5VE93TWpaVDFaeVZzL094TXJ5bURBPT0K",
       "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.10.1.app.tar.gz"
     }
   }
