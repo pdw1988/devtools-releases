@@ -1,5 +1,22 @@
 # 更新日志
 
+## v1.10.1 —— 2026-10-10
+
+· 日志查看：可切「最新在上 / 最早在上」，默认最新在上（优化）
+
+· 菜单调整：码上追 + 码上连合并为「码上运维」，正则测试器 / 日志转SQL / SELECT转UPDATE 暂时隐藏（调整）
+
+· 连服务器拉日志：搜日志按路径搜、目录显示全（优化）
+
+· JSONPath 查询改成「JSON 查看」：树形展开折叠 + 搜索定位（优化）
+
+· SFTP 传输三项打磨：下载百分比进度、断网快速判死、残片不落地（优化）
+
+· 页面测试认 uni-app 工程与差旅 / mscm 写操作，判定收紧堵掉误判（功能）
+
+> Windows 安装包（推荐）：`CodeNow_1.10.1_x64-setup.exe` · 含 Oracle 11g 客户端：GitHub Release `v1.10.1` 附件 `CHUJU-SQL_1.10.1_x64-setup-oracle11g.exe`（超 100MB，不进 git） · 便携版：`CodeNow_1.10.1_portable.exe`（免安装；不含自动更新）
+> macOS：`CodeNow_1.10.1_aarch64.dmg`（拖进应用程序；未签名时需右键 → 打开）
+
 ## v1.10.0 —— 2026-10-04
 
 · 码上追详情卡高度可拖：列表与详情之间加拖拽条（界面）
@@ -101,7 +118,6 @@
 
 > Windows 安装包（推荐）：`CodeNow_1.10.0_x64-setup.exe` · 含 Oracle 11g 客户端：GitHub Release `v1.10.0` 附件 `CHUJU-SQL_1.10.0_x64-setup-oracle11g.exe`（超 100MB，不进 git） · 便携版：`CodeNow_1.10.0_portable.exe`（免安装；不含自动更新）
 > macOS：`CodeNow_1.10.0_aarch64.dmg`（拖进应用程序；未签名时需右键 → 打开）
-
 ## v1.9.0 —— 2026-10-04
 
 · 码上追详情卡高度可拖：列表与详情之间加拖拽条（界面）
@@ -202,8 +218,7 @@
   调完接口最想马上看库，原来要自己切「连库查询」、选表、写 SELECT 三步。
 
 > Windows 安装包（推荐）：`CodeNow_1.9.0_x64-setup.exe` · 含 Oracle 11g 客户端：GitHub Release `v1.9.0` 附件 `CHUJU-SQL_1.9.0_x64-setup-oracle11g.exe`（超 100MB，不进 git） · 便携版：`CodeNow_1.9.0_portable.exe`（免安装；不含自动更新）
-> macOS：`CodeNow_1.9.0_aarch64.dmg`（拖进应用程序；未签名时需右键 → 打开）
-## v1.7.0 —— 2026-09-25
+> macOS：`CodeNow_1.9.0_aarch64.dmg`（拖进应用程序；未签名时需右键 → 打开）## v1.7.0 —— 2026-09-25
 
 · 查询框直接执行写语句与 DDL，独立的「执行 DDL」弹窗撤掉
   这天用户连发三条被拒的语句：CTAS 备份一张表、重置单据状态的 UPDATE
