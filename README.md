@@ -1,31 +1,28 @@
-# CHUJU SQL
+# 码上 CodeNow
 
-对着表结构，出一句能跑的 SQL。Windows / macOS 本地离线桌面工具：粘贴建表语句、连 Oracle / MySQL / PostgreSQL，生成可执行 SQL，也可以在当前连接上查询、插入一行、按主键更新或删除。
+Java 开发者的桌面工具箱：表结构 · SQL 生成 · 测试数据 · 接口测试 · 日志查看 · SSH 终端 / 文件互传，一条工作流打通，本地算，不上网。
 
-**介绍页**：[https://pdw1988.github.io/devtools-releases/](https://pdw1988.github.io/devtools-releases/)
+## 下载最新版 v1.10.1
 
-这个仓库**只放安装包和更新清单**，没有源码。
+| 平台 | 文件 |
+| --- | --- |
+| Windows 安装版 | [CodeNow_1.10.1_x64-setup.exe](https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.10.1_x64-setup.exe) |
+| Windows 免安装 | [CodeNow_1.10.1_portable.exe](https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.10.1_portable.exe) |
+| macOS（Apple Silicon） | [CodeNow_1.10.1_aarch64.dmg](https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.10.1_aarch64.dmg) |
 
-## 下载（当前 1.0.0）
+> 国内连不上 GitHub：用 [Gitee 镜像](https://gitee.com/pdwcloud/devtools-releases/releases) 下载。
+> 更新：装好后应用内「检查更新」自动升级；各版本改动见 [CHANGELOG.md](CHANGELOG.md)。
 
-| | 文件 |
-|---|---|
-| Windows 安装包（推荐） | [CHUJU SQL_1.0.0_x64-setup.exe](./CHUJU%20SQL_1.0.0_x64-setup.exe) |
-| Windows 便携版 | [CHUJU-SQL_1.0.0_portable.exe](./CHUJU-SQL_1.0.0_portable.exe) |
-| macOS Apple Silicon | [CHUJU SQL_1.0.0_aarch64.dmg](./CHUJU%20SQL_1.0.0_aarch64.dmg) |
+## 它做什么
 
-版本号以 [`latest.json`](./latest.json) 为准。发新版后文件名会变，始终下版本号最大的那几个。
+- **码上查**：导入 DDL / 连库拿表结构，生成单表 / 多表 SQL、批量 INSERT / UPDATE 测试数据
+- **码上写**：YAML / Properties / JSON 互转校验
+- **码上测**：扫 Spring Boot 工程出全部接口，生成并回归接口测试（支持 uni-app / Vue 页面测试）
+- **码上追**：本机大日志秒开，按 logback pattern 拆列过滤，连服务器拉日志
+- **码上连**：SSH 终端 + 服务器文件上传下载
 
-- **安装包**：装完可在应用里点「检查更新」。
-- **便携版**：免安装，双击就跑。不含自动更新，升级请再下新的覆盖。
-- **Mac**：未做 Apple 公证。第一次打开请 **按住 Control 点图标 → 打开**（或系统设置 → 隐私与安全性 → 仍要打开）。不要双击，Gatekeeper 会拦。
+免费版覆盖日常；专业版解锁连库导入、SSH / 日志、接口回归等（应用内激活）。
 
-需要 64 位系统。Windows 10/11 自带 WebView2 即可。连 Oracle 11g 时本机还要 64 位 Instant Client（`oci.dll` 在 PATH 或 `OCI_LIB_DIR`）；12.1+ 一般不用装客户端。
+## 许可
 
-## 免费 / 专业版
-
-安装包默认是免费版：自导表最多 8 张（两张示例不占），连库能查、不能把表结构导进缓存；多表 / 批量 / SELECT转UPDATE / 导出 DDL 能看不能一键复制。专业版解开这些上限，在应用升级卡里粘贴许可码。
-
-## 更新日志
-
-见 [CHANGELOG.md](./CHANGELOG.md)。
+安装包与更新元数据的著作权归作者所有（见 LICENSE），软件按应用内用户许可协议授权。
