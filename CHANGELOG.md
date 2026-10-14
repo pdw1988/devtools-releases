@@ -67,8 +67,7 @@ fix(码上测): 列表页读地址参数时不带参数试开一次取第一行 
 · 页面测试认 uni-app 工程与差旅 / mscm 写操作，判定收紧堵掉误判（功能）
 
 > Windows 安装包（推荐）：`CodeNow_1.10.1_x64-setup.exe` · 含 Oracle 11g 客户端：GitHub Release `v1.10.1` 附件 `CHUJU-SQL_1.10.1_x64-setup-oracle11g.exe`（超 100MB，不进 git） · 便携版：`CodeNow_1.10.1_portable.exe`（免安装；不含自动更新）
-> macOS：`CodeNow_1.10.1_aarch64.dmg`（拖进应用程序；未签名时需右键 → 打开）
-## v1.10.0 —— 2026-10-04
+> macOS：`CodeNow_1.10.1_aarch64.dmg`（拖进应用程序；未签名时需右键 → 打开）## v1.10.0 —— 2026-10-04
 
 · 码上追详情卡高度可拖：列表与详情之间加拖拽条（界面）
 
