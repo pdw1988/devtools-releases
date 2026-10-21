@@ -2,13 +2,13 @@
 
 Java 开发者的桌面工具箱：表结构 · 测试数据 · 接口测试 · 日志查看 · SSH 终端 / 文件互传，一条工作流打通，本地算，不上网。
 
-## 下载最新版 v1.10.1
+## 下载最新版 v1.11.3
 
 | 平台 | 文件 |
 | --- | --- |
-| Windows 安装版 | [CodeNow_1.10.1_x64-setup.exe](https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.10.1_x64-setup.exe) |
-| Windows 免安装 | [CodeNow_1.10.1_portable.exe](https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.10.1_portable.exe) |
-| macOS（Apple Silicon） | [CodeNow_1.10.1_aarch64.dmg](https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.10.1_aarch64.dmg) |
+| Windows 安装版 | [CodeNow_1.11.3_x64-setup.exe](https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.11.3_x64-setup.exe) |
+| Windows 免安装 | [CodeNow_1.11.3_portable.exe](https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.11.3_portable.exe) |
+| macOS（Apple Silicon） | [CodeNow_1.11.3_aarch64.dmg](https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.11.3_aarch64.dmg) |
 
 > 国内连不上 GitHub：用 [Gitee 镜像](https://gitee.com/pdwcloud/devtools-releases/releases) 下载。
 > 更新：装好后应用内「检查更新」自动升级；各版本改动见 [CHANGELOG.md](CHANGELOG.md)。
