@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>码上 CodeNow · 对着表，出一句能跑的 SQL</title>
-<meta name="description" content="码上 CodeNow 是一款本地运行的 SQL 生成工具：日志参数自动回填、查询结果一键转为主键 UPDATE、表结构离线速查。数据不出本机，Windows / macOS 免费下载。">
+<title>码上 CodeNow · Java 开发者的桌面工具箱</title>
+<meta name="description" content="码上 CodeNow 是 Java 开发者的桌面工具箱：表结构与测试数据、Spring Boot 接口测试与回归、页面测试、大日志查看、SSH 终端与文件互传。本地运行，Windows / macOS 免费下载。">
 <style>
   :root {
     --bg: #e8eef6;
@@ -61,6 +61,7 @@
   .btn-pri:hover { background: var(--acc2) }
   .btn-ghost { background: var(--panel); color: var(--txt); border: 1px solid var(--line) }
   .meta { margin-top: 12px; color: var(--dimmer); font-size: 13px }
+  .trial { display: inline-block; margin: 12px 0 0; padding: 6px 12px; border-radius: 8px; background: rgba(13, 159, 110, .1); color: var(--ok); font-size: 14px }
   .card {
     background: var(--panel); border: 1px solid var(--line); border-radius: var(--r);
     box-shadow: var(--glow);
@@ -76,6 +77,7 @@
   .code .n { color: #fdba74 }
   .hooks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 28px 0 }
   @media (max-width: 780px) { .hooks { grid-template-columns: 1fr } }
+  @media (min-width: 781px) and (max-width: 900px) { .hooks { grid-template-columns: repeat(2, 1fr) } }
   .hook { padding: 16px 16px 14px }
   .hook .tag {
     display: inline-block; font-size: 12px; color: var(--ok); background: rgba(13, 159, 110, .1);
@@ -110,58 +112,75 @@
 <body>
 <div class="wrap">
   <header>
-    <div class="brand">码上 CodeNow<span>本地运行 · 离线可用</span></div>
+    <div class="brand">码上 CodeNow<span>Java 开发者的桌面工具箱</span></div>
     <a class="btn btn-ghost" href="#download">下载</a>
   </header>
 
   <div class="hero" id="download">
     <div class="hero-grid">
       <div>
-        <h1>对着表，出一句能跑的 SQL</h1>
-        <p class="lead">一款本地运行的 SQL 生成工具：粘贴日志自动回填参数，查询结果一键转为主键 UPDATE。全程离线可用，表结构不出本机，也不必再打开一个数据库客户端。</p>
+        <h1>查表、测接口、看日志、上服务器，一个窗口搞定</h1>
+        <p class="lead">给 Java 开发者的桌面工具箱：表结构与测试数据、Spring Boot 接口测试与回归、页面测试、大日志查看、SSH 终端与文件互传。全部在本机运行，表结构、日志和密码都不上传。</p>
         <div class="acts">
-          <a class="btn btn-pri" id="dl-win" href="https://github.com/pdw1988/devtools-releases" rel="noopener">下载 Windows 安装包</a>
-          <a class="btn btn-ghost" id="dl-oci" href="https://github.com/pdw1988/devtools-releases/releases/download/v1.2.0/CHUJU-SQL_1.2.0_x64-setup-oracle11g.exe" rel="noopener">含 Oracle 11g 客户端</a>
+          <a class="btn btn-pri" id="dl-win" href="https://github.com/pdw1988/devtools-releases" rel="noopener">下载 Windows 安装版</a>
+          <a class="btn btn-ghost" id="dl-more" href="https://github.com/pdw1988/devtools-releases" rel="noopener">Windows 免安装版</a>
           <a class="btn btn-ghost" id="dl-mac" href="https://github.com/pdw1988/devtools-releases" rel="noopener">macOS（Apple Silicon）</a>
-          <a class="btn btn-ghost" id="dl-more" href="https://github.com/pdw1988/devtools-releases" rel="noopener">便携版</a>
         </div>
         <p class="meta" id="ver">正在读取最新版本…</p>
-        <p class="meta">安装包怎么选：本机已装有 Oracle 客户端（PL/SQL Developer、Instant Client），或只需连接 Oracle 12c+ / MySQL / PostgreSQL，用普通包即可；需要连接 Oracle 11g 且本机没有客户端，选「含 Oracle 11g 客户端」版本（内置 Instant Client，约 105MB）。</p>
+        <p class="trial">限时试用：加微信 <strong>pdwcloud88</strong>，免费领取 7 天专业版体验。</p>
+        <p class="meta">国内下载慢：到 <a href="https://gitee.com/pdwcloud/devtools-releases/releases" rel="noopener">Gitee 镜像</a> 下载。装好后应用内「检查更新」自动升级，各版本改动见 <a href="https://github.com/pdw1988/devtools-releases/blob/main/CHANGELOG.md" rel="noopener">更新记录</a>。</p>
         <p class="meta">Windows：如被 SmartScreen 拦截，请点击「更多信息 → 仍要运行」。macOS：安装包未经公证，首次打开请右键选择「打开」。</p>
       </div>
-      <pre class="code" aria-label="日志转 SQL 示例"><span class="who">日志转 SQL · 免费功能示例</span><span class="c">-- 粘贴 Preparing / Parameters 日志后自动生成</span>
-<span class="k">INSERT INTO</span> sys_user (username, status)
-<span class="k">VALUES</span> (<span class="s">'zhangsan'</span>, <span class="n">1</span>);</pre>
+      <pre class="code" aria-label="码上测示例"><span class="who">码上测 · 接口回归示例</span><span class="c">-- 扫描 Spring Boot 工程：3 个工程 · 128 个接口</span>
+<span class="k">GET </span> /order/list      <span class="s">200 ✓</span>  <span class="n">38ms</span>
+<span class="k">POST</span> /order/save      <span class="s">200 ✓</span>  <span class="n">112ms</span>
+<span class="k">POST</span> /order/submit    <span class="n">200 ✗</span>  <span class="c">code=500 其实失败</span>
+<span class="c">-- 增改删发真数据，跑完自动清理</span></pre>
     </div>
   </div>
 
   <div class="hooks">
     <article class="card hook">
-      <span class="tag">免费 · 结果可复制</span>
-      <h2>日志转 SQL</h2>
-      <p>粘贴 MyBatis 日志中的 Preparing 与 Parameters 两行，自动回填占位符，直接得到可执行的 SQL。</p>
-    </article>
-    <article class="card hook">
-      <span class="tag">免费 · 结果可复制</span>
-      <h2>SELECT 转 UPDATE</h2>
-      <p>粘贴查询结果，按主键生成对应的 UPDATE 语句。批量改状态、修数据，一步完成。</p>
-    </article>
-    <article class="card hook">
       <span class="tag">免费版 8 张表</span>
-      <h2>离线 + 连库</h2>
-      <p>离线模式下粘贴 DDL 即可使用；也可连接数据库导入数据字典（计入 8 张表额度）。生产库密码不落盘。</p>
+      <h2>码上查 · 表结构与测试数据</h2>
+      <p>粘贴 DDL 或连库导入表结构，按表名、字段、中文注释秒查；一键生成批量 INSERT 测试数据，连库只读查询。</p>
+    </article>
+    <article class="card hook">
+      <span class="tag">免费：扫描 + 单接口调试</span>
+      <h2>码上测 · 接口测试</h2>
+      <p>扫描 Spring Boot 工程列出全部接口，自动生成用例；增改删发真数据并自动清理，识别「200 但其实失败」，一键回归出报告。</p>
+    </article>
+    <article class="card hook">
+      <span class="tag">免费：单页调试</span>
+      <h2>页面测试</h2>
+      <p>认得 Vue / uni-app 工程，驱动本机浏览器登录后逐页巡检、逐个查询条件验证，标出「新失败」和「修好了」。</p>
+    </article>
+    <article class="card hook">
+      <span class="tag">免费：本机日志</span>
+      <h2>日志查看</h2>
+      <p>几百 MB 的日志秒开，按 pattern 拆列，按级别、关键字、时间过滤；专业版可直接连服务器拉日志、多份日志按时间交错看。</p>
+    </article>
+    <article class="card hook">
+      <span class="tag pro">专业版</span>
+      <h2>SSH 终端 · 文件互传</h2>
+      <p>常用服务器一键连，多标签终端；SFTP 浏览目录、上传下载带进度，断网快速判断，半截文件不落地。</p>
+    </article>
+    <article class="card hook">
+      <span class="tag">免费</span>
+      <h2>小工具</h2>
+      <p>JSON 树形查看与搜索定位，YAML / Properties / JSON 互转校验，Cron 表达式解读。</p>
     </article>
   </div>
 
   <section class="story">
-    <h3>多数时候，你需要的不是又一个数据库客户端</h3>
-    <p>改一个状态字段、补一条 INSERT、把日志里的问号填上 —— 这些任务要的只是一句能立即执行的 SQL。</p>
+    <h3>改完代码到确认没问题，不用再开五个工具</h3>
+    <p>查表、造数、调接口、翻日志、上服务器 —— 原来要在数据库客户端、Postman、文本编辑器、Xshell 之间来回切，现在一条工作流打通：</p>
     <ol>
-      <li>导入表结构：直接粘贴 CREATE TABLE（兼容 PL/SQL Developer、Navicat 导出的 Oracle DDL），或连接数据库导入数据字典。</li>
-      <li>按表名、字段名或中文注释快速检索，定位目标表。</li>
-      <li>选择 SQL 类型，右侧即时生成：可直接执行的完整语句或 <code>#{}</code> 占位形式，一键复制。</li>
+      <li>码上查：导入表结构，查字段、造测试数据。</li>
+      <li>码上测：扫描工程拿到全部接口，单个调试或整批回归；页面测试顺带把前端页面也巡一遍。</li>
+      <li>出了问题：日志查看直接打开或连服务器拉日志定位，需要时开 SSH 终端、传文件。</li>
     </ol>
-    <p>两项差异化能力：控制台日志与参数一并粘贴，自动回填占位符；查询结果一键生成按主键更新的 UPDATE。安全边界同样明确：连库查询仅限只读，表结构、SQL 与连接密码均不上传。</p>
+    <p>安全边界明确：连库查询只读，生产库密码不落盘；表结构、日志、SQL 与连接信息都只在本机，产品没有任何数据上报。</p>
   </section>
 
   <section class="card" style="padding: 6px 4px 0; overflow: auto">
@@ -171,9 +190,14 @@
       </thead>
       <tbody>
         <tr><td>导入表数量（含连库导入）</td><td>最多 8 张（内置示例表不占额度）</td><td>不限</td></tr>
-        <tr><td>SQL 生成（日志转 SQL / 单表 / SELECT 转 UPDATE / 多表 / 批量 / 导出 DDL）</td><td>全部可用，结果可复制、可导出</td><td>同免费版</td></tr>
-        <tr><td>SQL 模板</td><td>可套用已有模板</td><td>可保存自定义模板</td></tr>
+        <tr><td>SQL 与测试数据生成</td><td>全部可用，结果可复制、可导出</td><td>同免费版</td></tr>
         <tr><td>我的 SQL 库（SQL 收藏）</td><td>最多 5 条</td><td>不限</td></tr>
+        <tr><td>码上测：扫描工程、接口文档导出（MD / HTML / OpenAPI）</td><td>可用</td><td>可用</td></tr>
+        <tr><td>码上测：接口调试</td><td>单接口发送</td><td>批量用例、全自动回归、按 Controller 回归</td></tr>
+        <tr><td>页面测试</td><td>单页调试</td><td>多页巡检</td></tr>
+        <tr><td>复制给 AI 用的接口说明</td><td>—</td><td>可用</td></tr>
+        <tr><td>日志查看</td><td>本机日志文件</td><td>另可连服务器拉日志、多份按时间交错</td></tr>
+        <tr><td>SSH 终端 · 文件互传</td><td>—</td><td>可用</td></tr>
       </tbody>
     </table>
   </section>
@@ -181,7 +205,7 @@
   <section class="card pay" id="pay">
     <div>
       <h3>专业版 · 一次性买断 ¥199（绑定一台设备）</h3>
-      <p class="story" style="margin-top:0" id="wechat-line">添加微信 pdwcloud88 并完成付款，将订单号发送至该微信号，即可收到许可码；在应用内「升级」卡片中粘贴即可激活。许可码仅在本机校验，表结构等数据不会上传。</p>
+      <p class="story" style="margin-top:0" id="wechat-line">想先试试：添加微信 pdwcloud88，免费领取 7 天专业版体验。确定购买：添加微信 pdwcloud88 并完成付款，将订单号发送至该微信号，即可收到许可码；在应用内「升级」卡片中粘贴即可激活。许可码仅在本机校验，表结构等数据不会上传。</p>
       <div class="todo" id="todo-wx" hidden>本机预览：微信号是空的。发到 GitHub Pages 之前填 <code>SITE.wechat</code>，收款码放同目录 <code>pay-qr.png</code>。</div>
     </div>
     <div>
@@ -193,16 +217,20 @@
   <section class="faq">
     <h3>常见问题</h3>
     <details open>
-      <summary>和 Navicat / DataGrip 有什么不同？</summary>
-      <p>Navicat、DataGrip 是数据库客户端，解决的是「连上库之后」的操作。码上 CodeNow 补的是更前面的那一步：不连库也能基于表结构生成可执行的 SQL。日志参数回填、查询结果转 UPDATE 是它的差异化能力；连库功能只是为了少切换一次窗口。</p>
+      <summary>和 Navicat、Postman、Xshell 有什么不同？</summary>
+      <p>它们各管一段；码上 CodeNow 把「查表 → 测接口 → 看日志 → 上服务器」串在一个窗口里。接口不用一个个手录，扫一遍 Spring Boot 工程就全有；用例、测试数据自动生成，增改删跑完自动清理。</p>
     </details>
     <details>
-      <summary>表结构、SQL 会上传吗？</summary>
-      <p>不会。所有解析与生成均在本机完成，产品没有任何数据上报通道。生产库密码不落盘，每次连接时输入；测试库密码可存入系统凭据管理器。许可码仅在本机校验。</p>
+      <summary>表结构、日志、密码会上传吗？</summary>
+      <p>不会。所有解析与生成均在本机完成，产品没有任何数据上报通道；码上测只向你自己填的服务地址发请求。生产库密码不落盘，每次连接时输入；测试库和服务器密码可存入系统凭据管理器。许可码仅在本机校验。</p>
     </details>
     <details>
-      <summary>两个 Windows 安装包怎么选？</summary>
-      <p>普通包体积更小，支持应用内自动更新。如果本机已配置 Oracle 客户端（PATH 中已有 oci.dll，例如 PL/SQL Developer、Instant Client 或完整客户端），或只需连接 Oracle 12.1+ / MySQL / PostgreSQL，选择普通包即可。需要连接 Oracle 11g 且本机没有客户端时，选择「含 Oracle 11g 客户端」安装包：内置 Instant Client 19c，无需另行下载。该包约 105MB，超出 Git 仓库 100MB 限制，因此作为 GitHub Release 附件发布，不参与自动更新。</p>
+      <summary>安装版和免安装版怎么选？</summary>
+      <p>一般选安装版，支持应用内「检查更新」自动升级。免安装版是单个 exe，双击就能用，适合没有安装权限的电脑；升级要自己下载新版替换。连 Oracle 11g 需要本机有 Oracle 客户端（PL/SQL Developer 或 Instant Client 自带即可）；Oracle 12c+ / MySQL / PostgreSQL 不需要。</p>
+    </details>
+    <details>
+      <summary>GitHub 下载太慢怎么办？</summary>
+      <p>到 <a href="https://gitee.com/pdwcloud/devtools-releases/releases" rel="noopener">Gitee 镜像</a> 下载，内容一样。应用内「检查更新」连不上 GitHub 时也会自动走 Gitee。</p>
     </details>
     <details>
       <summary>Windows 提示「已阻止」怎么办？</summary>
@@ -215,7 +243,7 @@
   </section>
 
   <footer>
-    码上 CodeNow · 对着表，出一句能跑的 SQL。安装包发布于 GitHub 公开仓库，软件本体不开源；表结构、SQL 与连接信息均保存在本机。
+    码上 CodeNow · Java 开发者的桌面工具箱。安装包发布于 GitHub 公开仓库（Gitee 同步镜像），软件本体不开源；表结构、日志与连接信息均保存在本机。
   </footer>
 </div>
 
@@ -231,11 +259,11 @@
       './latest.json',
       'https://raw.githubusercontent.com/pdw1988/devtools-releases/main/latest.json',
       'https://cdn.jsdelivr.net/gh/pdw1988/devtools-releases@main/latest.json',
+      'https://gitee.com/pdwcloud/devtools-releases/raw/master/latest.json',
     ],
   }
 
   const winBtn = document.getElementById('dl-win')
-  const ociBtn = document.getElementById('dl-oci')
   const moreBtn = document.getElementById('dl-more')
   const verEl = document.getElementById('ver')
   const wxLine = document.getElementById('wechat-line')
@@ -244,7 +272,7 @@
   const qrMiss = document.getElementById('pay-qr-miss')
 
   if (SITE.wechat) {
-    wxLine.innerHTML = '添加微信 <strong>' + escapeHtml(SITE.wechat) + '</strong> 并完成付款，将订单号发送至该微信号，即可收到许可码；在应用内「升级」卡片中粘贴即可激活。许可码仅在本机校验，表结构等数据不会上传。'
+    wxLine.innerHTML = '想先试试：添加微信 <strong>' + escapeHtml(SITE.wechat) + '</strong>，免费领取 7 天专业版体验。确定购买：同一微信完成付款，将订单号发送至该微信号，即可收到许可码；在应用内「升级」卡片中粘贴即可激活。许可码仅在本机校验，表结构等数据不会上传。'
   }
   const local = location.protocol === 'file:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1'
   if (!SITE.wechat && local) todo.hidden = false
@@ -282,7 +310,7 @@
 
   loadLatest().then((j) => {
     if (!j || !j.version) {
-      verEl.textContent = '暂时无法读取版本信息，请点击上方按钮前往 Releases 页面，下载最新的 Windows 安装包（文件名含 x64-setup.exe）。'
+      verEl.textContent = '暂时无法读取版本信息，请点击上方按钮前往下载页，下载最新的 Windows 安装包（文件名含 x64-setup.exe）。'
       return
     }
     const win = j.platforms && j.platforms['windows-x86_64'] && j.platforms['windows-x86_64'].url
@@ -290,13 +318,11 @@
     verEl.textContent = '最新公开版本 v' + j.version + (hint ? ' · ' + hint : '')
     if (win) {
       winBtn.href = encodeURI(win)
-      /* 附属包名从 latest.json 的 setup.exe 文件名推导，不写死品牌前缀：
-         productName 改成 CodeNow 后新包叫 CodeNow_…，旧包仍是 CHUJU SQL_/CHUJU-SQL_。
-         oci/portable 历史上是连字符前缀，dmg 是空格前缀，照旧区分。 */
+      /* 附属包名从 latest.json 的 setup.exe 文件名推导，不写死品牌前缀。
+         含 Oracle 11g 客户端的包 1.7.0 后不再出，按钮已去掉。 */
       const file = decodeURIComponent(win.split('/').pop() || '')
       const base = file.replace(/_x64-setup\.exe$/, '')
       const hyphen = base.replace(' ', '-')
-      ociBtn.href = SITE.repo + '/releases/download/v' + j.version + '/' + encodeURIComponent(hyphen + '_x64-setup-oracle11g.exe')
       moreBtn.href = sibling(win, hyphen + '_portable.exe')
       document.getElementById('dl-mac').href = sibling(win, base + '_aarch64.dmg')
     }

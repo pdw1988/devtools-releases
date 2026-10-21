@@ -1,5 +1,20 @@
 # 更新日志
 
+## v1.12.0 —— 2026-10-21
+
+fix(码上测): 环境页、页面测试空状态的示例文字换成通用地址和目录
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+· 专业版：加微信 pdwcloud88 可免费领 7 天体验；升级弹窗按现有功能重新列出免费 / 专业版区别（新功能）
+
+· 下载介绍页按现有功能重写（优化）
+
+· 限期许可码不能再靠调回电脑日期继续使用（修复）
+
+> Windows 安装包（推荐）：`CodeNow_1.12.0_x64-setup.exe` · 含 Oracle 11g 客户端：GitHub Release `v1.12.0` 附件 `CHUJU-SQL_1.12.0_x64-setup-oracle11g.exe`（超 100MB，不进 git） · 便携版：`CodeNow_1.12.0_portable.exe`（免安装；不含自动更新）
+> macOS：`CodeNow_1.12.0_aarch64.dmg`（拖进应用程序；未签名时需右键 → 打开）
+
 ## v1.11.3 —— 2026-10-21
 
 · 码上测：界面精简，前端 / 后端工程只显示用得上的；页面测试加「异常输入」用例和几处顺手优化
@@ -52,7 +67,6 @@
 
 > Windows 安装包（推荐）：`CodeNow_1.11.3_x64-setup.exe` · 含 Oracle 11g 客户端：GitHub Release `v1.11.3` 附件 `CHUJU-SQL_1.11.3_x64-setup-oracle11g.exe`（超 100MB，不进 git） · 便携版：`CodeNow_1.11.3_portable.exe`（免安装；不含自动更新）
 > macOS：`CodeNow_1.11.3_aarch64.dmg`（拖进应用程序；未签名时需右键 → 打开）
-
 ## v1.11.2 —— 2026-10-21
 
 · 码上测：界面精简，前端 / 后端工程只显示用得上的；页面测试加「异常输入」用例和几处顺手优化
@@ -104,8 +118,7 @@
 · 页面测试认 uni-app 工程与差旅 / mscm 写操作，判定收紧堵掉误判（功能）
 
 > Windows 安装包（推荐）：`CodeNow_1.11.2_x64-setup.exe` · 含 Oracle 11g 客户端：GitHub Release `v1.11.2` 附件 `CHUJU-SQL_1.11.2_x64-setup-oracle11g.exe`（超 100MB，不进 git） · 便携版：`CodeNow_1.11.2_portable.exe`（免安装；不含自动更新）
-> macOS：`CodeNow_1.11.2_aarch64.dmg`（拖进应用程序；未签名时需右键 → 打开）
-## v1.11.1 —— 2026-10-19
+> macOS：`CodeNow_1.11.2_aarch64.dmg`（拖进应用程序；未签名时需右键 → 打开）## v1.11.1 —— 2026-10-19
 
 · 码上追：日志详情里嵌着的 JSON 自动缩进显示；SSH 单次拉取上限提到 100MB
 
