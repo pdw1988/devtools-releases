@@ -1,15 +1,15 @@
 {
-  "version": "1.13.0",
-  "notes": "· 全新界面：只留「极光」浅色和「石墨」深色两套主题，所有页面重新排版（优化）\n\n· 窗口标题栏跟主题配色一致（优化）\n\n· SSH 终端不再死黑，日志查看排序改叫「降序 / 升序」（优化）",
-  "pub_date": "2026-10-23T06:48:15.807Z",
+  "version": "1.13.2",
+  "notes": "fix(scripts): 清理 artifact 脚本 token 权限不够时说人话，不再刷 libuv Assertion failed\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n\n· 专业版可以在软件里一键试用 7 天，不用再加微信要码（新功能）\n\n· 从服务器拉大日志不再卡死，超长行不再把内容挤没（修复）\n\n· 大 JSON 粘贴不卡、查看表结构显示全部表、折叠卡能收起，空页面和出错提示更清楚（修复）",
+  "pub_date": "2026-10-28T11:56:52.490Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha2M0d1dLSTQ1M0l2TFFXZTFKV2EvZnNuazBWVk1YK2ZMMlR0eHVaUXVvVjVPTGppYnRnTmsrZHBubUQ0V01EQ1VxV2RYKzdJZXhGSUJ3aGh2N29QNWc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNzM4MDU4CWZpbGU6Q29kZU5vd18xLjEzLjBfeDY0LXNldHVwLmV4ZQprZzd3bkN1LzFCNmo2d2svVXVvWGdBRVMyTDdvbzdKVmxhaStzTkpYbWZSN1hyck1UclNGaDhBYUNhOERLV0w1emVCbE1USS9mVm55djErM2k2a0hEZz09Cg==",
-      "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.13.0_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha2Z6NGlSU2hjaEVWciszUmVOZ0dURWZYTzRGNmY0dkxoNG5acnI0bzQ2YnJzNWZodUVRRWk1VU5hOTJZSlNiYkJqcG95WUF5cnZBeFE2SzloQklMR1FvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTg4NTQ3CWZpbGU6Q29kZU5vd18xLjEzLjJfeDY0LXNldHVwLmV4ZQpkZzJYYjBnb1NMdy9Hc3Z0TEVBRk52cW9YU3lTajdjcGVmSzEvOGRUT3c4c2lMSi9VVjRpdTZsOVNwWTlUWTVseWlTcUE5ZEZYdFdFbkFadkdSLytCQT09Cg==",
+      "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.13.2_x64-setup.exe"
     },
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha1pGa0VUbUtOciswV1VtTEZManE1M3l2RWdqMEs4YVd5UTZhSDRWUHZXTUVXWm5JQ3I4WW05dGQrdXpleTFQSDVZbjhhbjFQeWQ4TXJuNWlTNEsxVHdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNzM2OTQ4CWZpbGU6Q29kZU5vdy5hcHAudGFyLmd6Ck5ZLzlkQ0U5TFAzZXZqNklKanVpUlJuV2xQWGR2L1BQckdWSU9NbnVERlk3b3ZQRHBVTCtZbmhKSW9Dc3BYS0FxRGVIMk9RZ05GUHM1d1o4dFlvRkJnPT0K",
-      "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.13.0.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha1l2VlF5QnNiQ3phazM4d3ltN2hManYzUUk0T3hOS1NqUS9yN09Cd0wyVllNSVdRRTd4dUQvM2pCTjNtYm1VdndzL0NZcVd5VGtZb0x2V1VMc1NOUGdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTg3NDg1CWZpbGU6Q29kZU5vdy5hcHAudGFyLmd6CjFzUmhLa1c4NDFtWDZKVjA3MVNSRGNYcEppd2hadGZ2cUR2QnYzK2JwS09PK0RlUWdxdWdualVQRWhiWXdCc3YybExNVGRIVUF6UVNwMTdNYXN0U0N3PT0K",
+      "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.13.2.app.tar.gz"
     }
   }
 }

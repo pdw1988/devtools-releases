@@ -1,5 +1,20 @@
 # 更新日志
 
+## v1.13.2 —— 2026-10-28
+
+fix(scripts): 清理 artifact 脚本 token 权限不够时说人话，不再刷 libuv Assertion failed
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+· 专业版可以在软件里一键试用 7 天，不用再加微信要码（新功能）
+
+· 从服务器拉大日志不再卡死，超长行不再把内容挤没（修复）
+
+· 大 JSON 粘贴不卡、查看表结构显示全部表、折叠卡能收起，空页面和出错提示更清楚（修复）
+
+> Windows 安装包（推荐）：`CodeNow_1.13.2_x64-setup.exe` · 含 Oracle 11g 客户端：GitHub Release `v1.13.2` 附件 `CHUJU-SQL_1.13.2_x64-setup-oracle11g.exe`（超 100MB，不进 git） · 便携版：`CodeNow_1.13.2_portable.exe`（免安装；不含自动更新）
+> macOS：`CodeNow_1.13.2_aarch64.dmg`（拖进应用程序；未签名时需右键 → 打开）
+
 ## v1.13.0 —— 2026-10-23
 
 · 全新界面：只留「极光」浅色和「石墨」深色两套主题，所有页面重新排版（优化）
@@ -10,7 +25,6 @@
 
 > Windows 安装包（推荐）：`CodeNow_1.13.0_x64-setup.exe` · 含 Oracle 11g 客户端：GitHub Release `v1.13.0` 附件 `CHUJU-SQL_1.13.0_x64-setup-oracle11g.exe`（超 100MB，不进 git） · 便携版：`CodeNow_1.13.0_portable.exe`（免安装；不含自动更新）
 > macOS：`CodeNow_1.13.0_aarch64.dmg`（拖进应用程序；未签名时需右键 → 打开）
-
 ## v1.12.0 —— 2026-10-21
 
 fix(码上测): 环境页、页面测试空状态的示例文字换成通用地址和目录
@@ -24,8 +38,7 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 · 限期许可码不能再靠调回电脑日期继续使用（修复）
 
 > Windows 安装包（推荐）：`CodeNow_1.12.0_x64-setup.exe` · 含 Oracle 11g 客户端：GitHub Release `v1.12.0` 附件 `CHUJU-SQL_1.12.0_x64-setup-oracle11g.exe`（超 100MB，不进 git） · 便携版：`CodeNow_1.12.0_portable.exe`（免安装；不含自动更新）
-> macOS：`CodeNow_1.12.0_aarch64.dmg`（拖进应用程序；未签名时需右键 → 打开）
-## v1.11.3 —— 2026-10-21
+> macOS：`CodeNow_1.12.0_aarch64.dmg`（拖进应用程序；未签名时需右键 → 打开）## v1.11.3 —— 2026-10-21
 
 · 码上测：界面精简，前端 / 后端工程只显示用得上的；页面测试加「异常输入」用例和几处顺手优化
 
