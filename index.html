@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>码上 CodeNow · Java 开发者的桌面工具箱</title>
-<meta name="description" content="码上 CodeNow 是 Java 开发者的桌面工具箱：表结构与测试数据、Spring Boot 接口测试与回归、页面测试、大日志查看、SSH 终端与文件互传。本地运行，Windows / macOS 免费下载。">
+<title>码上 CodeNow · 不用登服务器翻日志，不用手录接口</title>
+<meta name="description" content="给 Java 开发的桌面工具：连服务器直接拉日志按级别、时间、关键字筛；扫一遍 Spring Boot 工程拿到全部接口自动回归，揪出「返回 200 其实失败」。本机运行，免费下载，专业版可试用 7 天。">
 <style>
   :root {
     --bg: #e8eef6;
@@ -26,6 +26,7 @@
     --glow: 0 1px 0 rgba(255, 255, 255, .9), 0 10px 32px -14px rgba(20, 70, 120, .22);
   }
   * { box-sizing: border-box }
+  [hidden] { display: none !important }
   html, body { margin: 0; background: var(--bg); color: var(--txt); font: 16px/1.55 var(--font) }
   body {
     min-height: 100vh;
@@ -48,6 +49,7 @@
   .hero { padding: 28px 0 8px }
   .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 22px; align-items: start }
   @media (max-width: 780px) { .hero-grid { grid-template-columns: 1fr } }
+  .hero-grid > *, .pains > *, .ba > * { min-width: 0 }
   h1 { font-size: clamp(28px, 4vw, 40px); line-height: 1.2; margin: 0 0 12px; letter-spacing: -.02em }
   .lead { color: var(--dim); font-size: 17px; margin: 0 0 22px; max-width: 36em }
   .acts { display: flex; flex-wrap: wrap; gap: 10px; align-items: center }
@@ -69,6 +71,7 @@
   .code {
     padding: 14px 16px; font: 13px/1.55 var(--mono); color: #1d4ed8;
     background: #0f172a; color: #e2e8f0; border-radius: var(--r);
+    margin: 0; overflow-x: auto;
   }
   .code .who { color: #7dd3fc; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; display: block; margin-bottom: 8px }
   .code .c { color: #64748b }
@@ -103,6 +106,28 @@
   .faq summary { cursor: pointer; font-weight: 600 }
   .faq p { margin: 8px 0 0; color: var(--dim); font-size: 14px }
   footer { padding: 28px 0 40px; color: var(--dimmer); font-size: 13px }
+  .pains { display: grid; gap: 14px; margin: 30px 0 }
+  .pain { padding: 18px 18px 16px }
+  .pain h2 { font-size: 18px; margin: 0 0 4px }
+  .pain .sub { margin: 0 0 12px; color: var(--dim); font-size: 14px }
+  .ba { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+  @media (max-width: 780px) { .ba { grid-template-columns: 1fr } }
+  .ba div { border-radius: 10px; padding: 10px 12px; font-size: 14px }
+  .ba b { display: block; font-size: 12px; letter-spacing: .04em; margin-bottom: 4px }
+  .ba .before { background: var(--panel2); color: var(--dim) }
+  .ba .before b { color: var(--dimmer) }
+  .ba .after { background: rgba(13, 159, 110, .08); color: var(--txt) }
+  .ba .after b { color: var(--ok) }
+  .pain .tag {
+    float: right; font-size: 12px; color: var(--ok); background: rgba(13, 159, 110, .1);
+    border-radius: 999px; padding: 2px 8px;
+  }
+  .pain .tag.pro { color: var(--warn); background: rgba(216, 137, 11, .12) }
+  .more { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px }
+  @media (max-width: 780px) { .more { grid-template-columns: 1fr } }
+  .more .card { padding: 14px 16px }
+  .more h2 { font-size: 15px; margin: 0 0 4px }
+  .more p { margin: 0; color: var(--dim); font-size: 13px }
   .todo {
     margin: 12px 0 0; padding: 10px 12px; border-radius: 8px;
     background: rgba(216, 137, 11, .12); color: #8a5a00; font-size: 13px;
@@ -112,15 +137,15 @@
 <body>
 <div class="wrap">
   <header>
-    <div class="brand">码上 CodeNow<span>Java 开发者的桌面工具箱</span></div>
+    <div class="brand">码上 CodeNow<span>给 Java 开发的桌面工具</span></div>
     <a class="btn btn-ghost" href="#download">下载</a>
   </header>
 
   <div class="hero" id="download">
     <div class="hero-grid">
       <div>
-        <h1>查表、测接口、看日志、上服务器，一个窗口搞定</h1>
-        <p class="lead">给 Java 开发者的桌面工具箱：表结构与测试数据、Spring Boot 接口测试与回归、页面测试、大日志查看、SSH 终端与文件互传。全部在本机运行，表结构、日志和密码都不上传。</p>
+        <h1>不用再登服务器翻日志，<br>也不用一个个手录接口</h1>
+        <p class="lead">选好服务器和日志文件，几秒拉到本机，按级别、时间、关键字筛出那条报错；扫一遍 Spring Boot 工程就拿到全部接口，一键回归，把「返回 200 其实失败」的接口揪出来。全部在本机运行，日志、表结构和密码都不上传。</p>
         <div class="acts">
           <a class="btn btn-pri" id="dl-win" href="https://github.com/pdw1988/devtools-releases" rel="noopener">下载 Windows 安装版</a>
           <a class="btn btn-ghost" id="dl-more" href="https://github.com/pdw1988/devtools-releases" rel="noopener">Windows 免安装版</a>
@@ -131,56 +156,66 @@
         <p class="meta">国内下载慢：到 <a href="https://gitee.com/pdwcloud/devtools-releases/releases" rel="noopener">Gitee 镜像</a> 下载。装好后应用内「检查更新」自动升级，各版本改动见 <a href="https://github.com/pdw1988/devtools-releases/blob/main/CHANGELOG.md" rel="noopener">更新记录</a>。</p>
         <p class="meta">Windows：如被 SmartScreen 拦截，请点击「更多信息 → 仍要运行」。macOS：安装包未经公证，首次打开请右键选择「打开」。</p>
       </div>
-      <pre class="code" aria-label="码上测示例"><span class="who">码上测 · 接口回归示例</span><span class="c">-- 扫描 Spring Boot 工程：3 个工程 · 128 个接口</span>
-<span class="k">GET </span> /order/list      <span class="s">200 ✓</span>  <span class="n">38ms</span>
-<span class="k">POST</span> /order/save      <span class="s">200 ✓</span>  <span class="n">112ms</span>
-<span class="k">POST</span> /order/submit    <span class="n">200 ✗</span>  <span class="c">code=500 其实失败</span>
-<span class="c">-- 增改删发真数据，跑完自动清理</span></pre>
+      <div style="display:grid; gap:12px">
+        <pre class="code" aria-label="拉服务器日志示例"><span class="who">日志 · 连服务器拉取</span><span class="c">-- app-01:/data/logs/demo-shop.log · 最近 20 万行</span>
+<span class="k">级别</span> ERROR  <span class="k">关键字</span> submit
+<span class="n">14:05:12.381 ERROR</span> OrderService
+  NullPointerException: couponId
+<span class="s">命中 3 条</span>  <span class="c">点开看完整堆栈</span></pre>
+        <pre class="code" aria-label="接口回归示例"><span class="who">接口 · 一键回归</span><span class="k">GET </span> /order/list    <span class="s">200 ✓</span>
+<span class="k">POST</span> /order/save    <span class="s">200 ✓</span>
+<span class="k">POST</span> /order/submit  <span class="n">200 ✗</span> <span class="c">code=500</span></pre>
+      </div>
     </div>
   </div>
 
-  <div class="hooks">
-    <article class="card hook">
-      <span class="tag">免费版 8 张表</span>
-      <h2>码上查 · 表结构与测试数据</h2>
-      <p>粘贴 DDL 或连库导入表结构，按表名、字段、中文注释秒查；一键生成批量 INSERT 测试数据，连库只读查询。</p>
+  <div class="pains">
+    <article class="card pain">
+      <span class="tag pro">专业版 · 可试用 7 天</span>
+      <h2>线上报错了，要去服务器上找日志</h2>
+      <p class="sub">本机的日志文件免费版就能开；连服务器拉日志是专业版。</p>
+      <div class="ba">
+        <div class="before"><b>以前</b>登堡垒机、ssh 上去，less 翻页、grep 一条条试；下载到本机，几百 MB 的文件把编辑器卡死。</div>
+        <div class="after"><b>现在</b>选服务器、选文件，几秒拉到本机。按级别、时间段、关键字筛，点一条看完整堆栈；几个服务的日志还能按时间交错看。</div>
+      </div>
     </article>
-    <article class="card hook">
+    <article class="card pain">
       <span class="tag">免费：扫描 + 单接口调试</span>
-      <h2>码上测 · 接口测试</h2>
-      <p>扫描 Spring Boot 工程列出全部接口，自动生成用例；增改删发真数据并自动清理，识别「200 但其实失败」，一键回归出报告。</p>
+      <h2>改了代码，不知道别的接口有没有被带坏</h2>
+      <p class="sub">很多项目出错也返回 HTTP 200，只看状态码会把失败当成成功。</p>
+      <div class="ba">
+        <div class="before"><b>以前</b>Postman 里一个个手录接口、假数据；增改删测完还要自己去库里清数据，久了就懒得回归。</div>
+        <div class="after"><b>现在</b>扫一遍 Spring Boot 工程拿到全部接口，用例自动生成，增改删跑完自动清理；一键回归出报告，「200 其实失败」单独标出来。</div>
+      </div>
     </article>
-    <article class="card hook">
-      <span class="tag">免费：单页调试</span>
-      <h2>页面测试</h2>
-      <p>认得 Vue / uni-app 工程，驱动本机浏览器登录后逐页巡检、逐个查询条件验证，标出「新失败」和「修好了」。</p>
-    </article>
-    <article class="card hook">
-      <span class="tag">免费：本机日志</span>
-      <h2>日志查看</h2>
-      <p>几百 MB 的日志秒开，按 pattern 拆列，按级别、关键字、时间过滤；专业版可直接连服务器拉日志、多份日志按时间交错看。</p>
-    </article>
-    <article class="card hook">
-      <span class="tag pro">专业版</span>
-      <h2>SSH 终端 · 文件互传</h2>
-      <p>常用服务器一键连，多标签终端；SFTP 浏览目录、上传下载带进度，断网快速判断，半截文件不落地。</p>
-    </article>
-    <article class="card hook">
-      <span class="tag">免费</span>
-      <h2>小工具</h2>
-      <p>JSON 树形查看与搜索定位，YAML / Properties / JSON 互转校验，Cron 表达式解读。</p>
+    <article class="card pain">
+      <span class="tag">免费版 8 张表</span>
+      <h2>字段只记得中文名，测试数据靠手造</h2>
+      <p class="sub">表多、字段多的老系统尤其痛。</p>
+      <div class="ba">
+        <div class="before"><b>以前</b>在数据库客户端里一张张翻注释；造数据手写 INSERT，字段一长就对不齐。</div>
+        <div class="after"><b>现在</b>粘贴建表语句或连库导入，按中文注释搜字段；一键生成批量 INSERT 测试数据，手机号、金额、日期都是合法值。</div>
+      </div>
     </article>
   </div>
 
-  <section class="story">
-    <h3>改完代码到确认没问题，不用再开五个工具</h3>
-    <p>查表、造数、调接口、翻日志、上服务器 —— 原来要在数据库客户端、Postman、文本编辑器、Xshell 之间来回切，现在一条工作流打通：</p>
-    <ol>
-      <li>码上查：导入表结构，查字段、造测试数据。</li>
-      <li>码上测：扫描工程拿到全部接口，单个调试或整批回归；页面测试顺带把前端页面也巡一遍。</li>
-      <li>出了问题：日志查看直接打开或连服务器拉日志定位，需要时开 SSH 终端、传文件。</li>
-    </ol>
-    <p>安全边界明确：连库查询只读，生产库密码不落盘；表结构、日志、SQL 与连接信息都只在本机，产品没有任何数据上报。</p>
+  <section>
+    <h3>另外顺手的</h3>
+    <div class="more">
+      <article class="card">
+        <h2>SSH 终端 · 文件互传</h2>
+        <p>常用服务器一键连，多标签终端；浏览目录、上传下载带进度。（专业版）</p>
+      </article>
+      <article class="card">
+        <h2>页面测试</h2>
+        <p>认得 Vue / uni-app 工程，登录后逐页巡检，标出「新失败」和「修好了」。</p>
+      </article>
+      <article class="card">
+        <h2>小工具</h2>
+        <p>JSON 树形查看与搜索，YAML / Properties / JSON 互转，Cron 表达式解读。（免费）</p>
+      </article>
+    </div>
+    <p class="story">全部在本机运行：连库查询只读，生产库密码不落盘；表结构、日志、SQL 和连接信息只在你的电脑上，软件没有任何数据上报。</p>
   </section>
 
   <section class="card" style="padding: 6px 4px 0; overflow: auto">
@@ -198,6 +233,7 @@
         <tr><td>复制给 AI 用的接口说明</td><td>—</td><td>可用</td></tr>
         <tr><td>日志查看</td><td>本机日志文件</td><td>另可连服务器拉日志、多份按时间交错</td></tr>
         <tr><td>SSH 终端 · 文件互传</td><td>—</td><td>可用</td></tr>
+        <tr><td>试用</td><td colspan="2">软件里点「免费试用 7 天」，专业版功能全部放开；到期回免费版，数据不丢</td></tr>
       </tbody>
     </table>
   </section>
@@ -217,8 +253,12 @@
   <section class="faq">
     <h3>常见问题</h3>
     <details open>
-      <summary>和 Navicat、Postman、Xshell 有什么不同？</summary>
-      <p>它们各管一段；码上 CodeNow 把「查表 → 测接口 → 看日志 → 上服务器」串在一个窗口里。接口不用一个个手录，扫一遍 Spring Boot 工程就全有；用例、测试数据自动生成，增改删跑完自动清理。</p>
+      <summary>和 Xshell、Postman、Navicat 有什么不同？</summary>
+      <p>它们各管一段；码上 CodeNow 管的是「改完代码→确认没问题→出事查日志」这一整段。日志不用登服务器 less，拉下来就能按列筛；接口不用一个个手录，扫一遍工程就全有，用例和测试数据自动生成，跑完自动清理。</p>
+    </details>
+    <details>
+      <summary>试用怎么开？到期会怎样？</summary>
+      <p>装好后点左下角「免费」标签或任一专业功能，在弹出的卡片里点「免费试用 7 天」，不用加微信、不用注册。到期自动回免费版，导过的表、收藏、连接都还在。每台电脑可以试用一次。</p>
     </details>
     <details>
       <summary>表结构、日志、密码会上传吗？</summary>
