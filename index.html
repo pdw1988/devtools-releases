@@ -284,6 +284,7 @@
 
   <footer>
     码上 CodeNow · Java 开发者的桌面工具箱。安装包发布于 GitHub 公开仓库（Gitee 同步镜像），软件本体不开源；表结构、日志与连接信息均保存在本机。
+    <span id="stat-note" hidden>本页用 GoatCounter 统计访问和下载次数（不用 Cookie，不记录个人信息）。</span>
   </footer>
 </div>
 
@@ -294,6 +295,8 @@
    */
   const SITE = {
     wechat: 'pdwcloud88',
+    /* GoatCounter 站点代号（xxx.goatcounter.com 的 xxx），空 = 不统计 */
+    goatcounter: 'codenow',
     repo: 'https://github.com/pdw1988/devtools-releases',
     latest: [
       './latest.json',
@@ -369,6 +372,38 @@
   }).catch(() => {
     verEl.textContent = '暂时无法读取版本信息，请点击上方按钮前往 Releases 页面，下载最新的 Windows 安装包（文件名含 x64-setup.exe）。'
   })
+
+  /* 来源统计：发到各平台的链接带 ?from=juejin 这类，没带就记来路网站的域名；
+     下载按钮点击按「包/来源」单独计数。GoatCounter 不用 Cookie，不记个人信息。 */
+  function hostOf(u) {
+    try {
+      const h = new URL(u).hostname
+      return h === location.hostname ? '' : h
+    } catch { return '' }
+  }
+  const params = new URLSearchParams(location.search)
+  const from = (params.get('from') || params.get('utm_source') || hostOf(document.referrer) || 'direct')
+    .replace(/[^\w.-]/g, '').slice(0, 40) || 'direct'
+  function count(opts) {
+    if (window.goatcounter && window.goatcounter.count) window.goatcounter.count(opts)
+  }
+  if (SITE.goatcounter && !local) {
+    const gc = document.createElement('script')
+    gc.async = true
+    gc.src = 'https://gc.zgo.at/count.js'
+    gc.dataset.goatcounter = 'https://' + SITE.goatcounter + '.goatcounter.com/count'
+    gc.dataset.goatcounterSettings = JSON.stringify({ no_onload: true })
+    gc.onload = () => count({ path: location.pathname, referrer: from })
+    document.head.appendChild(gc)
+    document.getElementById('stat-note').hidden = false
+    const kinds = { 'dl-win': 'win', 'dl-more': 'win-portable', 'dl-mac': 'mac' }
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest && e.target.closest('a[href]')
+      if (!a) return
+      const kind = kinds[a.id] || (a.href.includes('gitee.com/pdwcloud/devtools-releases') ? 'gitee' : '')
+      if (kind) count({ path: 'dl-' + kind + '-' + from, title: '下载 ' + kind + '（来源 ' + from + '）', event: true })
+    })
+  }
 </script>
 </body>
 </html>
