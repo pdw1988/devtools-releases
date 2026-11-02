@@ -1,15 +1,15 @@
 {
-  "version": "1.13.2",
-  "notes": "fix(scripts): 清理 artifact 脚本 token 权限不够时说人话，不再刷 libuv Assertion failed\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n\n· 专业版可以在软件里一键试用 7 天，不用再加微信要码（新功能）\n\n· 从服务器拉大日志不再卡死，超长行不再把内容挤没（修复）\n\n· 大 JSON 粘贴不卡、查看表结构显示全部表、折叠卡能收起，空页面和出错提示更清楚（修复）",
-  "pub_date": "2026-10-28T11:56:52.490Z",
+  "version": "1.13.3",
+  "notes": "· 页面测试的识别代码整块挪进专业版，开源版扫描只出接口（不升）\n\n· 用户手册、README、官网按当前版本重写；开源前再清一轮原单位业务痕迹（不升）\n\n· 码上测镜像准备公开：压缩代码、手册更正；发版统一 pnpm 10（不升）\n\n· 码上测 Docker 镜像从 1.2G 瘦到 0.5G（不升）\n\n· 修复码上测 Docker 镜像找不到扫描器（+0.0.1）\n\n· README 加截图（不升）\n\n· 开源仓库导出脚本（不升）\n\n· 开源用 README / LICENSE；Rust 专业版开关改成看 pro/ 在不在（不升）\n\n· 开源前清公司痕迹：测试样例换成若依假数据，许可签发工具挪进 pro/（不升）\n\n· 免费版不再限量：导表、收藏 SQL、存模板都不限；Redis 哨兵 / 集群改为免费（功能调整）\n\n· 新增「常用信息」页：VPN、堡垒机、生产库这些账号地址收在一处，密码加密存本机（新功能）\n\n· Redis 页能看懂 Java 存的对象和 gzip 压缩值，支持哨兵 / 集群 / 走跳板机，可按前缀整组删（新功能）\n\n· 新增「Redis」页：按前缀分组看键、改值、命令窗口，生产默认只读（新功能）\n\n· 专业版可以在软件里一键试用 7 天，不用再加微信要码（新功能）\n\n· 从服务器拉大日志不再卡死，超长行不再把内容挤没（修复）\n\n· 大 JSON 粘贴不卡、查看表结构显示全部表、折叠卡能收起，空页面和出错提示更清楚（修复）",
+  "pub_date": "2026-11-02T02:51:15.185Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha2Z6NGlSU2hjaEVWciszUmVOZ0dURWZYTzRGNmY0dkxoNG5acnI0bzQ2YnJzNWZodUVRRWk1VU5hOTJZSlNiYkJqcG95WUF5cnZBeFE2SzloQklMR1FvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTg4NTQ3CWZpbGU6Q29kZU5vd18xLjEzLjJfeDY0LXNldHVwLmV4ZQpkZzJYYjBnb1NMdy9Hc3Z0TEVBRk52cW9YU3lTajdjcGVmSzEvOGRUT3c4c2lMSi9VVjRpdTZsOVNwWTlUWTVseWlTcUE5ZEZYdFdFbkFadkdSLytCQT09Cg==",
-      "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.13.2_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha1RXUkNMMGJnUWdJbmR6VGlGeWRUZE03TGJiSVI5b3NZSWkrbGVPNXFkQ1h6NUhZbTUwd1hMTVo3VkhFSS9FZDVIWmhtRDJWNmlzelh0eVhlWCtsb2dJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTg3ODEyCWZpbGU6Q29kZU5vd18xLjEzLjNfeDY0LXNldHVwLmV4ZQpCMDc2SDJCUlphMEJGZ1NJVG1RRWpxWmpwTTZDMkxkcXlJVURhSkNycFZLczFyL01yY003V3IyWG8vOVAyUStGK3RsT0pHdDFPZHo3cmszZXNBWU9CQT09Cg==",
+      "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.13.3_x64-setup.exe"
     },
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha1l2VlF5QnNiQ3phazM4d3ltN2hManYzUUk0T3hOS1NqUS9yN09Cd0wyVllNSVdRRTd4dUQvM2pCTjNtYm1VdndzL0NZcVd5VGtZb0x2V1VMc1NOUGdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTg3NDg1CWZpbGU6Q29kZU5vdy5hcHAudGFyLmd6CjFzUmhLa1c4NDFtWDZKVjA3MVNSRGNYcEppd2hadGZ2cUR2QnYzK2JwS09PK0RlUWdxdWdualVQRWhiWXdCc3YybExNVGRIVUF6UVNwMTdNYXN0U0N3PT0K",
-      "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.13.2.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha1Q0elVaaXVZbE1mZzd5cVFCaVpVRWhiRnhoU3ZxNWQxL1lENjlSL3F3VTduQkFBQk5xWUZ2LzNtNkVwMjRXYUw2TDdtSDNkRWNRRzl0T0J1VTVLY2dFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTg2OTIzCWZpbGU6Q29kZU5vdy5hcHAudGFyLmd6Clhyd3hZMU1SNEN3Y2VlOFFsamNGaFZ2d29JeWo3ejBqSk5na3BkYk4zNVdSSnFZRTk5di9kUWdlTU02dUFmWUpYekNHSlZ6bFhWWXZlTktYbjBNcEJRPT0K",
+      "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.13.3.app.tar.gz"
     }
   }
 }
