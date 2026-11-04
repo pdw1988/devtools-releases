@@ -1,5 +1,16 @@
 # 更新日志
 
+## v1.13.4 —— 2026-11-04
+
+· 日志查看：筛出报错后可「查周边」看前后上下文
+  筛出报错后看不到它前后发生了什么：双击一行或点详情卡「查周边」即可看上下文，还能只看同线程。
+
+· 专业版显示「授权给 xxx」，许可校验更稳（功能调整）
+  许可码里带上买家称呼；试用和专业版功能的本机校验更严。
+
+> Windows 安装包（推荐）：`CodeNow_1.13.4_x64-setup.exe` · 含 Oracle 11g 客户端：GitHub Release `v1.13.4` 附件 `CHUJU-SQL_1.13.4_x64-setup-oracle11g.exe`（超 100MB，不进 git） · 便携版：`CodeNow_1.13.4_portable.exe`（免安装；不含自动更新）
+> macOS：`CodeNow_1.13.4_aarch64.dmg`（拖进应用程序；未签名时需右键 → 打开）
+
 ## v1.13.3 —— 2026-11-02
 
 · 新增「Redis」页：按前缀分组看键、改值、命令窗口，生产默认只读（新功能）
@@ -20,7 +31,6 @@
 
 > Windows 安装包（推荐）：`CodeNow_1.13.3_x64-setup.exe` · 含 Oracle 11g 客户端：GitHub Release `v1.13.3` 附件 `CHUJU-SQL_1.13.3_x64-setup-oracle11g.exe`（超 100MB，不进 git） · 便携版：`CodeNow_1.13.3_portable.exe`（免安装；不含自动更新）
 > macOS：`CodeNow_1.13.3_aarch64.dmg`（拖进应用程序；未签名时需右键 → 打开）
-
 ## v1.13.2 —— 2026-10-28
 
 fix(scripts): 清理 artifact 脚本 token 权限不够时说人话，不再刷 libuv Assertion failed
@@ -34,8 +44,7 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 · 大 JSON 粘贴不卡、查看表结构显示全部表、折叠卡能收起，空页面和出错提示更清楚（修复）
 
 > Windows 安装包（推荐）：`CodeNow_1.13.2_x64-setup.exe` · 含 Oracle 11g 客户端：GitHub Release `v1.13.2` 附件 `CHUJU-SQL_1.13.2_x64-setup-oracle11g.exe`（超 100MB，不进 git） · 便携版：`CodeNow_1.13.2_portable.exe`（免安装；不含自动更新）
-> macOS：`CodeNow_1.13.2_aarch64.dmg`（拖进应用程序；未签名时需右键 → 打开）
-## v1.13.0 —— 2026-10-23
+> macOS：`CodeNow_1.13.2_aarch64.dmg`（拖进应用程序；未签名时需右键 → 打开）## v1.13.0 —— 2026-10-23
 
 · 全新界面：只留「极光」浅色和「石墨」深色两套主题，所有页面重新排版（优化）
 

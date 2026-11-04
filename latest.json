@@ -1,15 +1,15 @@
 {
-  "version": "1.13.3",
-  "notes": "· 新增「Redis」页：按前缀分组看键、改值、命令窗口，生产默认只读（新功能）\n\n· Redis 页能看懂 Java 存的对象和 gzip 压缩值，支持哨兵 / 集群 / 走跳板机，可按前缀整组删（新功能）\n\n· 新增「常用信息」页：VPN、堡垒机、生产库这些账号地址收在一处，密码加密存本机（新功能）\n\n· 免费版不再限量：导表、收藏 SQL、存模板都不限；Redis 哨兵 / 集群改为免费（功能调整）\n\n· 页面测试改为专业版功能，单页运行也需要专业版，试用期内照常可用（功能调整）\n\n· 基础版代码已在 GitHub 开源（Apache-2.0）（新功能）\n\n· 码上测 Docker 镜像从 1.2G 瘦到 0.5G，修复镜像里找不到扫描器（修复）\n\n· 手册、官网按当前版本重写（文档）",
-  "pub_date": "2026-11-02T02:51:15.185Z",
+  "version": "1.13.4",
+  "notes": "· 日志查看：筛出报错后可「查周边」看前后上下文\n  筛出报错后看不到它前后发生了什么：双击一行或点详情卡「查周边」即可看上下文，还能只看同线程。\n\n· 专业版显示「授权给 xxx」，许可校验更稳（功能调整）\n  许可码里带上买家称呼；试用和专业版功能的本机校验更严。",
+  "pub_date": "2026-11-04T05:31:35.055Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha1RXUkNMMGJnUWdJbmR6VGlGeWRUZE03TGJiSVI5b3NZSWkrbGVPNXFkQ1h6NUhZbTUwd1hMTVo3VkhFSS9FZDVIWmhtRDJWNmlzelh0eVhlWCtsb2dJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTg3ODEyCWZpbGU6Q29kZU5vd18xLjEzLjNfeDY0LXNldHVwLmV4ZQpCMDc2SDJCUlphMEJGZ1NJVG1RRWpxWmpwTTZDMkxkcXlJVURhSkNycFZLczFyL01yY003V3IyWG8vOVAyUStGK3RsT0pHdDFPZHo3cmszZXNBWU9CQT09Cg==",
-      "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.13.3_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha1F2RnFaTmxSWkZWUU96c3E4MGFScUlMdUlIQW10L05rclJGOERybXhNM0tqVnNmZGdYWTVFczY5dTA2bUdiR0ZmdmU5UU1EMitoNU1JcmpGa1dSdkFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzIwNjg3CWZpbGU6Q29kZU5vd18xLjEzLjRfeDY0LXNldHVwLmV4ZQpleGp5YzcyeVJzUENpaXBjRGVKd09mSVV6SXdKODQzcWZVZlVwNEtiaVRHODRMWGZwRkZSNVJnVGZPQys5cWRyaTY0TUpQMnVXWDVYSHgrVDVPQ2tBdz09Cg==",
+      "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.13.4_x64-setup.exe"
     },
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha1Q0elVaaXVZbE1mZzd5cVFCaVpVRWhiRnhoU3ZxNWQxL1lENjlSL3F3VTduQkFBQk5xWUZ2LzNtNkVwMjRXYUw2TDdtSDNkRWNRRzl0T0J1VTVLY2dFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTg2OTIzCWZpbGU6Q29kZU5vdy5hcHAudGFyLmd6Clhyd3hZMU1SNEN3Y2VlOFFsamNGaFZ2d29JeWo3ejBqSk5na3BkYk4zNVdSSnFZRTk5di9kUWdlTU02dUFmWUpYekNHSlZ6bFhWWXZlTktYbjBNcEJRPT0K",
-      "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.13.3.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha1REYVBrWTVCamJWS3VyV3hmZXhHelIxaTZaZU9aY1Avb3loTXZPT21pbkovbVZETzJFajUrYWtua1hzcnptRHVBWkRMeU9YN2czZ2RaeUpMR2lOVEE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzcwMjQ3CWZpbGU6Q29kZU5vdy5hcHAudGFyLmd6CmNYN0d2UWhZT3l6eEFYVFBiVVUxVW1MN2JORjdVSlllcjFtd1haRmxDN21sMmtBN2VDN3lKK0RFTmphM09Tbk5mMUlXc1VSMkJIM0xLVTlTOEVCRkRBPT0K",
+      "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.13.4.app.tar.gz"
     }
   }
 }

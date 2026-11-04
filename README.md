@@ -3,13 +3,13 @@
 Java 开发者的桌面工具箱：表结构速查、造测试数据、连库查询、Redis、日志查看、接口测试、SSH 终端，一个窗口里干完。
 全部在本机算，表结构、连接、密码都不出你的电脑。
 
-## 下载最新版 v1.13.3
+## 下载最新版 v1.13.4
 
 | 平台 | 文件 |
 | --- | --- |
-| Windows 安装版 | [CodeNow_1.13.3_x64-setup.exe](https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.13.3_x64-setup.exe) |
-| Windows 免安装 | [CodeNow_1.13.3_portable.exe](https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.13.3_portable.exe) |
-| macOS（Apple Silicon） | [CodeNow_1.13.3_aarch64.dmg](https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.13.3_aarch64.dmg) |
+| Windows 安装版 | [CodeNow_1.13.4_x64-setup.exe](https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.13.4_x64-setup.exe) |
+| Windows 免安装 | [CodeNow_1.13.4_portable.exe](https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.13.4_portable.exe) |
+| macOS（Apple Silicon） | [CodeNow_1.13.4_aarch64.dmg](https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.13.4_aarch64.dmg) |
 
 > 国内连不上 GitHub：用 [Gitee 镜像](https://gitee.com/pdwcloud/devtools-releases/releases) 下载。
 > 更新：装好后应用内「检查更新」自动升级；各版本改动见 [CHANGELOG.md](CHANGELOG.md)。
