@@ -1,15 +1,15 @@
 {
-  "version": "1.13.4",
-  "notes": "· 日志查看：筛出报错后可「查周边」看前后上下文\n  筛出报错后看不到它前后发生了什么：双击一行或点详情卡「查周边」即可看上下文，还能只看同线程。\n\n· 专业版显示「授权给 xxx」，许可校验更稳（功能调整）\n  许可码里带上买家称呼；试用和专业版功能的本机校验更严。",
-  "pub_date": "2026-11-04T05:31:35.055Z",
+  "version": "1.13.5",
+  "notes": "· 连库查询：写 SQL 有关键字联想，打 sel 直接带出 SELECT * FROM\n  原来只有 t. 出列、FROM 后出表名，SELECT * FROM、WHERE、ORDER BY 这些都得一个字母一个字母敲。\n\n· 连库查询：点别的表不再冲掉写好的 SQL，点回来自动恢复\n  原来点左侧另一张表，SQL 框直接换成 SELECT *，写了半天的语句就没了：现在离开时记下，点回来就是上次写的。\n\n· 「码上查」菜单按干活顺序重排，去掉「导入表结构」\n  平时直接连库就有表结构，这一页很少用却占着菜单第一项：菜单少一项，要粘建表语句或扫源码时从「查看表结构」右上角进。\n\n· 日志查看：拉日志侧栏可以就地收起，左边留细栏一点展开\n  原来要收起或展开服务器侧栏只能回工具条点「连服务器拉日志」：现在侧栏右上角一点就收，收起后左边留一条细栏，点它再展开。\n\n· 连库查询：加「我的SQL库」按钮，一点跳去挑收藏的 SQL\n  经常要从收藏里拿 SQL 来查，原来得去左侧菜单找：现在 SQL 框上方一点就到，详情里点「去连库查询」又回来。\n\n· 连库查询：双击改多格后一起提交，提交前可撤销\n  原来改一格回车就立刻写库、撤不回：现在改完的格子标黄暂存，改好几格再一起提交，不想要了点「撤销修改」。\n\n· 日志查看：详情卡加「查同线程」，双击记住上次的模式\n  查周边后还要再点「只看同线程」太繁琐：详情卡点「查同线程」一步到位，之后双击别的行也按同线程看。",
+  "pub_date": "2026-11-15T15:49:30.451Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha1F2RnFaTmxSWkZWUU96c3E4MGFScUlMdUlIQW10L05rclJGOERybXhNM0tqVnNmZGdYWTVFczY5dTA2bUdiR0ZmdmU5UU1EMitoNU1JcmpGa1dSdkFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzIwNjg3CWZpbGU6Q29kZU5vd18xLjEzLjRfeDY0LXNldHVwLmV4ZQpleGp5YzcyeVJzUENpaXBjRGVKd09mSVV6SXdKODQzcWZVZlVwNEtiaVRHODRMWGZwRkZSNVJnVGZPQys5cWRyaTY0TUpQMnVXWDVYSHgrVDVPQ2tBdz09Cg==",
-      "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.13.4_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha1pWWHdaUEg0dzhUcUhoZVk1b0pZakJDQ05TRjZJMzFseHFEQzlZTUFLZExWZ1BlVUJDWE5LZzR6TTdGQjVQNWdQck9GT25ZUERXRzdqYSt1MGxRVHc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NzU3NzA3CWZpbGU6Q29kZU5vd18xLjEzLjVfeDY0LXNldHVwLmV4ZQpIaFBiMnJzRUdwZStBQ3JrOUdYZjMvYW5RamZRZGg3ZENnbnJXcTgzdDFTVEliUG9zZkpBVS9admJBbkN3R25TY3Zjd1JvRmF4UDFVTkp1TVUzRHREUT09Cg==",
+      "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.13.5_x64-setup.exe"
     },
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha1REYVBrWTVCamJWS3VyV3hmZXhHelIxaTZaZU9aY1Avb3loTXZPT21pbkovbVZETzJFajUrYWtua1hzcnptRHVBWkRMeU9YN2czZ2RaeUpMR2lOVEE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzcwMjQ3CWZpbGU6Q29kZU5vdy5hcHAudGFyLmd6CmNYN0d2UWhZT3l6eEFYVFBiVVUxVW1MN2JORjdVSlllcjFtd1haRmxDN21sMmtBN2VDN3lKK0RFTmphM09Tbk5mMUlXc1VSMkJIM0xLVTlTOEVCRkRBPT0K",
-      "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.13.4.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSeE9ZQkdNSGdha2I5R20zbDd5dHRLa1llRFI0aFZhUmg1bFZadE9oYTdnK0hGSnJKM08zdTRpdFdnUDh2YkZyTXUzWDlMbVlmYlNvR25zOUhkakpuSmVkdVhlbFk2aXdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NzU2NTgzCWZpbGU6Q29kZU5vdy5hcHAudGFyLmd6CjdsM1RlOENObCtrVloxUEFNdUg4K21PTEdCZTUxeXRXMG1RSThJL3F3NFFYQWpmbUhUR1ZKaWVqaWovdWtnSDh0RG5kZ2pmNG8zSUxSTXhDczh2Q0RnPT0K",
+      "url": "https://raw.githubusercontent.com/pdw1988/devtools-releases/main/CodeNow_1.13.5.app.tar.gz"
     }
   }
 }
